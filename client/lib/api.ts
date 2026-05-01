@@ -44,6 +44,8 @@ export const tripsAPI = {
     api.post(`/trips/${tripId}/places`, data),
   removePlace: (tripId: string, placeId: string) =>
     api.delete(`/trips/${tripId}/places/${placeId}`),
+  addHotel: (tripId: string, data: { hotelId: string; checkIn: string; nights: number }) =>
+    api.post(`/trips/${tripId}/hotels`, data),
   delete: (id: string) =>
     api.delete(`/trips/${id}`),
 };
@@ -64,6 +66,22 @@ export const packagesAPI = {
     api.get('/packages', { params: filters }),
   getById: (id: string) =>
     api.get(`/packages/${id}`),
+};
+
+// Bookings
+export const bookingsAPI = {
+  create: (data: {
+    tripId?: string;
+    packageId?: string;
+    startDate: string;
+    guests: number;
+    contactName: string;
+    contactEmail: string;
+    contactPhone?: string;
+    notes?: string;
+  }) => api.post('/bookings', data),
+  getMy: () => api.get('/bookings/my'),
+  getById: (id: string) => api.get(`/bookings/${id}`),
 };
 
 export default api;

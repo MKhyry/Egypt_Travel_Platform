@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
 import { packagesAPI } from '@/lib/api';
-import SimpleFooter from '@/components/layout/SimpleFooter';
 
 export default function TripsPage() {
   const [packages, setPackages] = useState<any[]>([]);
@@ -157,7 +156,6 @@ export default function TripsPage() {
         )}
       </section>
 
-      <SimpleFooter />
     </MainLayout>
   );
 }

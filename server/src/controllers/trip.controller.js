@@ -24,6 +24,7 @@ const getMyTrips = async (req, res) => {
   try {
     const trips = await Trip.find({ user: req.user._id })
       .populate('places.place', 'name city images')
+      .populate('hotels.hotel', 'name city pricePerNight stars images')
       .sort({ createdAt: -1 });
 
     res.json({ success: true, count: trips.length, data: trips });
@@ -36,7 +37,8 @@ const getMyTrips = async (req, res) => {
 const getTripById = async (req, res) => {
   try {
     const trip = await Trip.findById(req.params.id)
-      .populate('places.place', 'name city images category visitDuration');
+      .populate('places.place', 'name city images category visitDuration')
+      .populate('hotels.hotel', 'name city pricePerNight stars images');
 
     if (!trip) {
       return res.status(404).json({ success: false, message: 'Trip not found' });
@@ -113,6 +115,7 @@ const removePlaceFromTrip = async (req, res) => {
     );
 
     await trip.save();
+    await trip.populate('places.place', 'name city images category visitDuration');
     res.json({ success: true, data: trip });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
@@ -139,6 +142,34 @@ const deleteTrip = async (req, res) => {
   }
 };
 
+// POST /api/trips/:id/hotels — Add a hotel to a trip
+const addHotelToTrip = async (req, res) => {
+  try {
+    const { hotelId, checkIn, nights } = req.body;
+
+    const trip = await Trip.findById(req.params.id);
+
+    if (!trip) {
+      return res.status(404).json({ success: false, message: 'Trip not found' });
+    }
+
+    if (trip.user.toString() !== req.user._id.toString()) {
+      return res.status(403).json({ success: false, message: 'Not authorized' });
+    }
+
+    trip.hotels.push({ hotel: hotelId, checkIn, nights });
+
+    await trip.save();
+
+    await trip.populate('hotels.hotel', 'name city pricePerNight stars images');
+    await trip.populate('places.place', 'name city images category visitDuration');
+
+    res.json({ success: true, data: trip });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
 module.exports = {
   createTrip,
   getMyTrips,
@@ -146,4 +177,5 @@ module.exports = {
   addPlaceToTrip,
   removePlaceFromTrip,
   deleteTrip,
+  addHotelToTrip,
 };

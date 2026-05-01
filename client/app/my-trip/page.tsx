@@ -1,17 +1,16 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
 import { useAuthStore } from '@/store/authStore';
 import { useTripStore } from '@/store/tripStore';
 import { tripsAPI, hotelsAPI } from '@/lib/api';
-import SimpleFooter from '@/components/layout/SimpleFooter';
 
 export default function MyTripPage() {
   const router = useRouter();
-  const { user } = useAuthStore();
+  const { user, isInitialzing } = useAuthStore();
   const { trips, activeTrip, fetchTrips, fetchTrip, createTrip, removePlace } = useTripStore();
 
   const [hotels, setHotels] = useState<any[]>([]);
@@ -19,11 +18,21 @@ export default function MyTripPage() {
   const [formData, setFormData] = useState({ title: '', startDate: '', endDate: '', notes: '' });
   const [createLoading, setCreateLoading] = useState(false);
   const [createError, setCreateError] = useState('');
+  const pathname = usePathname();
 
   useEffect(() => {
+    if (isInitialzing) return;
     if (!user) { router.push('/login'); return; }
     fetchTrips();
-  }, [user]);
+  }, [user, isInitialzing]);
+
+  // Refresh trip data when navigating to this page (e.g., from booking confirmation)
+  useEffect(() => {
+    if (pathname === '/my-trip' && user && !isInitialzing) {
+      fetchTrips();
+      if (trips.length > 0) fetchTrip(trips[0]._id);
+    }
+  }, [pathname]);
 
   useEffect(() => {
     if (trips.length > 0 && !activeTrip) fetchTrip(trips[0]._id);
@@ -111,6 +120,8 @@ export default function MyTripPage() {
                   ))}
                 </select>
               )}
+
+
               <button
                 onClick={() => setShowCreateForm(!showCreateForm)}
                 className="px-6 py-3 border border-secondary text-secondary font-medium rounded-lg hover:bg-secondary-container transition-colors flex items-center gap-2"
@@ -118,14 +129,6 @@ export default function MyTripPage() {
                 <span className="material-symbols-outlined">add</span>
                 New Trip
               </button>
-              {activeTrip && (
-                <Link
-                  href="/booking"
-                  className="px-8 py-3 bg-tertiary-container text-white font-bold rounded-lg active:scale-95 transition-transform shadow-lg shadow-tertiary-container/20"
-                >
-                  Proceed to Booking
-                </Link>
-              )}
             </div>
           </div>
 
@@ -255,6 +258,13 @@ export default function MyTripPage() {
                     <span className="material-symbols-outlined text-primary">hotel</span>
                     <h2 className="font-h3 text-h3 text-on-surface">Suggested Hotels</h2>
                   </div>
+                  <Link
+                    href="/hotels"
+                    className="text-sm font-bold text-secondary hover:text-primary transition-colors flex items-center gap-1"
+                  >
+                    Browse All
+                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </Link>
                 </div>
 
                 {hotels.length === 0 ? (
@@ -299,6 +309,47 @@ export default function MyTripPage() {
                 )}
               </section>
 
+              {/* Reserved Hotels */}
+              {activeTrip?.hotels && activeTrip.hotels.length > 0 && (
+                <section>
+                  <div className="flex justify-between items-center mb-6">
+                    <div className="flex items-center gap-2">
+                      <span className="material-symbols-outlined text-primary">hotel</span>
+                      <h2 className="font-h3 text-h3 text-on-surface">Reserved Hotels</h2>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    {activeTrip.hotels.map((entry: any) => (
+                      <div key={entry._id} className="bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container-high shadow-sm flex">
+                        <div className="w-28 h-28 flex-shrink-0">
+                          <img src={entry.hotel?.images?.[0] || 'https://placehold.co/112x112?text=Hotel'} alt={entry.hotel?.name} className="w-full h-full object-cover" />
+                        </div>
+                        <div className="p-4 flex-grow">
+                          <h4 className="font-bold text-on-surface text-sm">{entry.hotel?.name}</h4>
+                          <p className="text-xs text-on-surface-variant flex items-center gap-1 mt-1">
+                            <span className="material-symbols-outlined text-sm">location_on</span>
+                            {entry.hotel?.city}
+                          </p>
+                          <div className="flex items-center gap-4 mt-2 text-xs text-on-surface-variant">
+                            <span>Check-in: {new Date(entry.checkIn).toLocaleDateString()}</span>
+                            <span>•</span>
+                            <span>{entry.nights} night{entry.nights > 1 ? 's' : ''}</span>
+                          </div>
+                          <div className="flex items-center justify-between mt-2">
+                            <div className="flex">
+                              {Array.from({ length: entry.hotel?.stars || 0 }).map((_, i) => (
+                                <span key={i} className="material-symbols-outlined text-primary-container text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                              ))}
+                            </div>
+                            <span className="text-primary font-bold text-sm">${entry.hotel?.pricePerNight}/night</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
+
               {/* Trip Summary */}
               <section className="bg-inverse-surface rounded-xl p-6 text-white">
                 <h3 className="font-h3 text-h3 mb-4">Trip Summary</h3>
@@ -323,10 +374,10 @@ export default function MyTripPage() {
                   </div>
                 </div>
                 <Link
-                  href="/hotels"
-                  className="mt-6 w-full block text-center bg-primary-container text-on-primary-container font-bold py-3 rounded-lg hover:bg-primary-fixed-dim transition-all active:scale-95"
+                  href={`/booking?tripId=${activeTrip._id}`}
+                  className="mt-4 w-full block text-center bg-primary text-on-primary font-bold py-3 rounded-lg hover:bg-primary/90 transition-all active:scale-95"
                 >
-                  Browse All Hotels
+                  Proceed to Booking
                 </Link>
               </section>
             </div>

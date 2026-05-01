@@ -18,5 +18,23 @@ Thumbs.db
 *.swo
 *~
 
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Env secrets
+server/.env
+client/.env.local
+client/.env
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+
+# Images (local assets, using Cloudinary in production)
+images/
+
 # Temp files
-last_report.txt
+state_report.txt

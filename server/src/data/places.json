@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Great Pyramid of Giza", "city": "Giza", "category": "historical",
+    "description": "The oldest and largest of the pyramids in the Giza pyramid complex, a true marvel of ancient engineering and the only remaining wonder of the ancient world.",
+    "imageKey": "great-pyramid-giza", "images": ["https://placehold.co/800x600/e0c090/FFF?text=Great+Pyramid"], "location": { "lat": 29.9792, "lng": 31.1342 }, "rating": 4.9, "visitDuration": 4, "tips": ["Best visited early morning to avoid crowds", "Wear comfortable walking shoes"]
+  },
+  {
+    "name": "Great Sphinx of Giza", "city": "Giza", "category": "historical",
+    "description": "A limestone statue of a reclining sphinx, a mythical creature with the body of a lion and the head of a human, guarding the ancient plateau.",
+    "imageKey": "great-sphinx-giza", "images": ["https://placehold.co/800x600/e0c090/FFF?text=Sphinx"], "location": { "lat": 29.9753, "lng": 31.1376 }, "rating": 4.7, "visitDuration": 2, "tips": ["Great photo ops near the front paws", "Bring sun protection"]
+  },
+  {
+    "name": "Saqqara Necropolis", "city": "Giza", "category": "historical",
+    "description": "A vast, ancient burial ground in Egypt, serving as the necropolis for the Ancient Egyptian capital, Memphis, featuring the famous Step Pyramid of Djoser.",
+    "imageKey": "saqqara-necropolis-giza", "images": ["https://placehold.co/800x600/e0c090/FFF?text=Saqqara"], "location": { "lat": 29.8713, "lng": 31.2162 }, "rating": 4.6, "visitDuration": 3, "tips": ["Hire an official guide", "Less crowded than the main Giza plateau"]
+  },
+  {
+    "name": "Egyptian Museum", "city": "Cairo", "category": "cultural",
+    "description": "Home to an extensive collection of ancient Egyptian antiquities, housing over 120,000 items including the magnificent golden mask of King Tutankhamun.",
+    "imageKey": "egyptian-museum-cairo", "images": ["https://placehold.co/800x600/802020/FFF?text=Egyptian+Museum"], "location": { "lat": 30.0478, "lng": 31.2336 }, "rating": 4.8, "visitDuration": 4, "tips": ["Photography requires a special ticket", "Plan for at least a half-day"]
+  },
+  {
+    "name": "Khan el-Khalili", "city": "Cairo", "category": "cultural",
+    "description": "A famous bazaar and souq in the historic center of Cairo. The bustling alleys are packed with colorful lanterns, spices, jewelry, and traditional crafts.",
+    "imageKey": "khan-el-khalili-cairo", "images": ["https://placehold.co/800x600/c08040/FFF?text=Khan+el-Khalili"], "location": { "lat": 30.0477, "lng": 31.2623 }, "rating": 4.5, "visitDuration": 3, "tips": ["Bargaining is expected", "Enjoy mint tea at El Fishawy cafe"]
+  },
+  {
+    "name": "Cairo Citadel", "city": "Cairo", "category": "historical",
+    "description": "A medieval Islamic-era fortification in Cairo, built by Salah ad-Din and offering sweeping panoramic views of the entire sprawling city below.",
+    "imageKey": "cairo-citadel-cairo", "images": ["https://placehold.co/800x600/c0b0a0/FFF?text=Cairo+Citadel"], "location": { "lat": 30.0299, "lng": 31.2611 }, "rating": 4.7, "visitDuration": 3, "tips": ["Dress modestly for the mosques", "Visit at sunset for incredible views"]
+  },
+  {
+    "name": "Al-Azhar Mosque", "city": "Cairo", "category": "historical",
+    "description": "One of Cairo's earliest surviving mosques and the site of the world's oldest university, a stunning example of classic Islamic architecture and scholarship.",
+    "imageKey": "al-azhar-mosque-cairo", "images": ["https://placehold.co/800x600/ffffff/000?text=Al-Azhar"], "location": { "lat": 30.0457, "lng": 31.2627 }, "rating": 4.6, "visitDuration": 2, "tips": ["Shoes must be removed", "Women should cover their hair"]
+  },
+  {
+    "name": "Coptic Cairo", "city": "Cairo", "category": "cultural",
+    "description": "A unique neighborhood in Old Cairo that encompasses the Babylon Fortress, the Hanging Church, the Greek Church of St. George, and many other historical sites.",
+    "imageKey": "coptic-cairo", "images": ["https://placehold.co/800x600/a08060/FFF?text=Coptic+Cairo"], "location": { "lat": 30.0063, "lng": 31.2300 }, "rating": 4.7, "visitDuration": 3, "tips": ["Respectful attire required", "Visit the Coptic Museum nearby"]
+  },
+  {
+    "name": "Al-Azhar Park", "city": "Cairo", "category": "nature",
+    "description": "A lush, green sanctuary in the heart of Islamic Cairo. It offers beautifully manicured gardens, fountains, and excellent views of the surrounding historic minarets.",
+    "imageKey": "al-azhar-park-cairo", "images": ["https://placehold.co/800x600/408040/FFF?text=Al-Azhar+Park"], "location": { "lat": 30.0416, "lng": 31.2650 }, "rating": 4.8, "visitDuration": 2, "tips": ["Great for a family picnic", "Lakeside cafes offer excellent local food"]
+  },
+  {
+    "name": "Karnak Temple", "city": "Luxor", "category": "historical",
+    "description": "A vast mix of decayed temples, chapels, pylons, and other buildings. The Great Hypostyle Hall is a magnificent forest of giant ancient pillars.",
+    "imageKey": "karnak-temple-luxor", "images": ["https://placehold.co/800x600/e0c090/FFF?text=Karnak"], "location": { "lat": 25.7188, "lng": 32.6573 }, "rating": 4.9, "visitDuration": 4, "tips": ["Attend the Sound and Light show at night", "Go early to beat the intense heat"]
+  },
+  {
+    "name": "Valley of the Kings", "city": "Luxor", "category": "historical",
+    "description": "The ancient burial ground of many of Egypt's New Kingdom rulers, featuring intricately decorated tombs carved deep into the desert rock.",
+    "imageKey": "valley-kings-luxor", "images": ["https://placehold.co/800x600/c0a080/FFF?text=Valley+of+the+Kings"], "location": { "lat": 25.7402, "lng": 32.6014 }, "rating": 4.8, "visitDuration": 4, "tips": ["Tutankhamun's tomb requires an extra ticket", "No photography inside tombs without a pass"]
+  },
+  {
+    "name": "Luxor Temple", "city": "Luxor", "category": "historical",
+    "description": "A large Ancient Egyptian temple complex located on the east bank of the Nile River. It is beautifully illuminated at night, offering a magical experience.",
+    "imageKey": "luxor-temple-luxor", "images": ["https://placehold.co/800x600/e0d0b0/FFF?text=Luxor+Temple"], "location": { "lat": 25.6997, "lng": 32.6397 }, "rating": 4.7, "visitDuration": 2, "tips": ["Best visited at dusk or night", "Located right in the city center"]
+  },
+  {
+    "name": "Hatshepsut Temple", "city": "Luxor", "category": "historical",
+    "description": "The striking mortuary temple of Queen Hatshepsut, built into the spectacular limestone cliffs of Deir el-Bahari, standing as a masterpiece of ancient architecture.",
+    "imageKey": "Hatshepsut-Temple-luxor", "images": ["https://placehold.co/800x600/e0c090/FFF?text=Hatshepsut"], "location": { "lat": 25.7383, "lng": 32.6065 }, "rating": 4.8, "visitDuration": 2, "tips": ["Take the small electric train from the entrance", "Very little shade, bring a hat"]
+  },
+  {
+    "name": "Colossi of Memnon", "city": "Luxor", "category": "historical",
+    "description": "Two massive monumental stone statues of Pharaoh Amenhotep III, standing proudly on the west bank of the Nile, remnants of a once-massive mortuary temple.",
+    "imageKey": "colossi-memnon-luxor", "images": ["https://placehold.co/800x600/c0a080/FFF?text=Colossi+of+Memnon"], "location": { "lat": 25.7205, "lng": 32.6105 }, "rating": 4.5, "visitDuration": 1, "tips": ["A quick stop on the way to the Valley of the Kings", "Free to view"]
+  },
+  {
+    "name": "Philae Temple", "city": "Aswan", "category": "historical",
+    "description": "An island-based temple complex dedicated to the goddess Isis, relocated entirely by UNESCO to save it from the rising waters of Lake Nasser.",
+    "imageKey": "philae-temple-aswan", "images": ["https://placehold.co/800x600/80a0c0/FFF?text=Philae+Temple"], "location": { "lat": 24.0255, "lng": 32.8841 }, "rating": 4.9, "visitDuration": 3, "tips": ["Accessed via a short motorboat ride", "The night show is highly recommended"]
+  },
+  {
+    "name": "Abu Simbel Temples", "city": "Aswan", "category": "historical",
+    "description": "Two massive rock temples featuring gigantic statues of Ramesses II, built to showcase the might of the pharaoh and perfectly aligned with the sun twice a year.",
+    "imageKey": "abu-simbel-aswan", "images": ["https://placehold.co/800x600/e0b080/FFF?text=Abu+Simbel"], "location": { "lat": 22.3370, "lng": 31.6258 }, "rating": 4.9, "visitDuration": 3, "tips": ["Usually requires an early morning convoy ride from Aswan", "Absolutely unmissable"]
+  },
+  {
+    "name": "Unfinished Obelisk", "city": "Aswan", "category": "historical",
+    "description": "The largest known ancient obelisk, lying carved out of the bedrock in a stone quarry. It offers incredible insight into ancient Egyptian stone-working techniques.",
+    "imageKey": "unfinished-obelisk-aswan", "images": ["https://placehold.co/800x600/c0b0a0/FFF?text=Unfinished+Obelisk"], "location": { "lat": 24.0768, "lng": 32.8953 }, "rating": 4.4, "visitDuration": 1, "tips": ["Very hot in the quarry, go early", "Good for understanding ancient engineering"]
+  },
+  {
+    "name": "Bibliotheca Alexandrina", "city": "Alexandria", "category": "cultural",
+    "description": "A magnificent modern library and cultural center built to commemorate the ancient Library of Alexandria. It features a stunning tilted disc architectural design.",
+    "imageKey": "bibliotheca-alexandria", "images": ["https://placehold.co/800x600/4080c0/FFF?text=Bibliotheca"], "location": { "lat": 31.2089, "lng": 29.9092 }, "rating": 4.8, "visitDuration": 3, "tips": ["Check out the antiquities museum inside", "English tours are available"]
+  },
+  {
+    "name": "Qaitbay Citadel", "city": "Alexandria", "category": "historical",
+    "description": "A 15th-century defensive fortress located on the Mediterranean coast, built upon the exact ruins of the famous Lighthouse of Alexandria.",
+    "imageKey": "qaitbay-citadel-alexandria", "images": ["https://placehold.co/800x600/c0a080/FFF?text=Qaitbay+Citadel"], "location": { "lat": 31.2140, "lng": 29.8856 }, "rating": 4.6, "visitDuration": 2, "tips": ["Great views of the Mediterranean Sea", "Enjoy a walk along the Corniche afterwards"]
+  },
+  {
+    "name": "Montazah Palace Gardens", "city": "Alexandria", "category": "nature",
+    "description": "Expansive royal gardens surrounding the striking Montazah Palace. The lush grounds feature rare plants, peaceful coves, and striking sea views.",
+    "imageKey": "montazah-palace-alexandria", "images": ["https://placehold.co/800x600/40a040/FFF?text=Montazah+Gardens"], "location": { "lat": 31.2882, "lng": 30.0159 }, "rating": 4.5, "visitDuration": 3, "tips": ["Perfect for afternoon strolls", "Palace interior is closed to the public"]
+  },
+  {
+    "name": "Giftun Island", "city": "Hurghada", "category": "beach",
+    "description": "A stunning national park island offering pristine white-sand beaches, crystal clear waters, and some of the best shallow-water snorkeling in the Red Sea.",
+    "imageKey": "giftun-island-hurghada", "images": ["https://placehold.co/800x600/40c0e0/FFF?text=Giftun+Island"], "location": { "lat": 27.2281, "lng": 33.9535 }, "rating": 4.8, "visitDuration": 6, "tips": ["Book a boat tour in advance", "Bring your own snorkeling gear if possible"]
+  },
+  {
+    "name": "Makadi Bay Water World", "city": "Hurghada", "category": "adventure",
+    "description": "Egypt's largest aqua park, featuring 50 thrilling water slides and pools designed for both adrenaline seekers and families looking for a fun day out.",
+    "imageKey": "makadi-bay-hurghada", "images": ["https://placehold.co/800x600/2080e0/FFF?text=Makadi+Water+World"], "location": { "lat": 26.9880, "lng": 33.8988 }, "rating": 4.6, "visitDuration": 5, "tips": ["Arrive right at opening to claim a sunbed", "Lockers are available"]
+  },
+  {
+    "name": "Ras Mohammed National Park", "city": "Sharm El Sheikh", "category": "nature",
+    "description": "A world-renowned diving and snorkeling haven at the southern tip of the Sinai Peninsula, famed for its incredibly vibrant coral reefs and rich marine life.",
+    "imageKey": "ras-mohammed-sharm-el-sheikh", "images": ["https://placehold.co/800x600/004080/FFF?text=Ras+Mohammed"], "location": { "lat": 27.7280, "lng": 34.2415 }, "rating": 4.9, "visitDuration": 6, "tips": ["Don't miss the mangrove channel", "Requires a passport for entry"]
+  },
+  {
+    "name": "Naama Bay", "city": "Sharm El Sheikh", "category": "beach",
+    "description": "The bustling heart of Sharm El Sheikh, offering sandy beaches by day and a vibrant promenade filled with restaurants, cafes, and nightlife by dusk.",
+    "imageKey": "naama-bay-sharm-el-sheikh", "images": ["https://placehold.co/800x600/f0d040/FFF?text=Naama+Bay"], "location": { "lat": 27.9103, "lng": 34.3297 }, "rating": 4.4, "visitDuration": 4, "tips": ["Great for beginner divers", "Plenty of dining options right on the beach"]
+  },
+  {
+    "name": "White Desert", "city": "Farafra", "category": "nature",
+    "description": "An otherworldly landscape of surreal, snow-white chalk rock formations sculpted by the wind over centuries, resembling giant mushrooms and animals.",
+    "imageKey": "white-desert-farafra", "images": ["https://placehold.co/800x600/ffffff/000?text=White+Desert"], "location": { "lat": 27.2723, "lng": 28.0062 }, "rating": 4.9, "visitDuration": 8, "tips": ["Overnight camping under the stars is a must", "Nights can get very cold"]
+  },
+  {
+    "name": "Crystal Mountain", "city": "Farafra", "category": "nature",
+    "description": "A magnificent ridge composed entirely of sparkling quartz crystals and barite, glistening brightly under the intense Egyptian desert sun.",
+    "imageKey": "crystal-mountain-farafra", "images": ["https://placehold.co/800x600/c0c0e0/FFF?text=Crystal+Mountain"], "location": { "lat": 27.6534, "lng": 28.4326 }, "rating": 4.5, "visitDuration": 1, "tips": ["Please do not break off the crystals", "A quick stop on the way to the White Desert"]
+  },
+  {
+    "name": "Shali Fortress", "city": "Siwa", "category": "historical",
+    "description": "The striking mud-brick ruins of the ancient fortified town of Siwa, towering above the modern oasis and offering incredible sunset panoramas.",
+    "imageKey": "shali-fortress-siwa", "images": ["https://placehold.co/800x600/a08060/FFF?text=Shali+Fortress"], "location": { "lat": 29.2023, "lng": 25.5197 }, "rating": 4.7, "visitDuration": 2, "tips": ["Climb carefully, steps are uneven", "Best viewed during golden hour"]
+  },
+  {
+    "name": "Cleopatra's Pool", "city": "Siwa", "category": "nature",
+    "description": "A natural bubbling stone pool fed by hot springs. Legend claims the famous queen bathed here, and it remains a popular swimming spot for locals and tourists.",
+    "imageKey": "cleopatra-pool-siwa", "images": ["https://placehold.co/800x600/40c0a0/FFF?text=Cleopatra+Pool"], "location": { "lat": 29.1970, "lng": 25.5340 }, "rating": 4.4, "visitDuration": 2, "tips": ["Enjoy fresh juices at the nearby cafes", "Dress modestly out of the water"]
+  },
+  {
+    "name": "Blue Hole", "city": "Dahab", "category": "adventure",
+    "description": "A famous submarine sinkhole renowned globally among freedivers and scuba divers for its depth, crystal clear waters, and sheer underwater cliff faces.",
+    "imageKey": "blue-hole-dahab", "images": ["https://placehold.co/800x600/002060/FFF?text=Blue+Hole"], "location": { "lat": 28.5718, "lng": 34.5367 }, "rating": 4.8, "visitDuration": 4, "tips": ["Snorkeling at the rim is spectacular", "Only for advanced technical divers if going deep"]
+  },
+  {
+    "name": "Mount Sinai", "city": "Dahab", "category": "adventure",
+    "description": "A sacred, towering mountain where tradition holds Moses received the Ten Commandments. A challenging overnight hike rewards climbers with a stunning sunrise.",
+    "imageKey": "mount-sinai-dahab", "images": ["https://placehold.co/800x600/806040/FFF?text=Mount+Sinai"], "location": { "lat": 28.5393, "lng": 33.9749 }, "rating": 4.9, "visitDuration": 8, "tips": ["Start the hike at 2 AM to catch the sunrise", "Dress in warm layers, it gets freezing"]
+  }
+]

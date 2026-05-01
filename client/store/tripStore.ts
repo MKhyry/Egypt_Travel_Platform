@@ -15,6 +15,13 @@ interface TripPlace {
   order: number;
 }
 
+interface TripHotel {
+  _id: string;
+  hotel: Place;
+  checkIn: string;
+  nights: number;
+}
+
 interface Trip {
   _id: string;
   title: string;
@@ -23,6 +30,7 @@ interface Trip {
   totalDays: number;
   status: string;
   places: TripPlace[];
+  hotels: TripHotel[];
   notes: string;
 }
 
@@ -35,9 +43,10 @@ interface TripStore {
   createTrip: (data: { title: string; startDate: string; endDate: string; notes?: string }) => Promise<Trip>;
   addPlace: (tripId: string, placeId: string, day: number) => Promise<void>;
   removePlace: (tripId: string, placeEntryId: string) => Promise<void>;
+  addHotel: (tripId: string, hotelId: string, checkIn: string, nights: number) => Promise<void>;
 }
 
-export const useTripStore = create<TripStore>((set) => ({
+export const useTripStore = create<TripStore>((set, get) => ({
   trips: [],
   activeTrip: null,
   isLoading: false,
@@ -63,11 +72,34 @@ export const useTripStore = create<TripStore>((set) => ({
 
   addPlace: async (tripId, placeId, day) => {
     const res = await tripsAPI.addPlace(tripId, { placeId, day });
-    set({ activeTrip: res.data.data });
+    set((state) => {
+      if (state.activeTrip && state.activeTrip._id === tripId) {
+        return { activeTrip: res.data.data };
+      }
+      return state;
+    });
+    await get().fetchTrips();
   },
 
   removePlace: async (tripId, placeEntryId) => {
     const res = await tripsAPI.removePlace(tripId, placeEntryId);
-    set({ activeTrip: res.data.data });
+    set((state) => {
+      if (state.activeTrip && state.activeTrip._id === tripId) {
+        return { activeTrip: res.data.data };
+      }
+      return state;
+    });
+    await get().fetchTrips();
+  },
+
+  addHotel: async (tripId, hotelId, checkIn, nights) => {
+    const res = await tripsAPI.addHotel(tripId, { hotelId, checkIn, nights });
+    set((state) => {
+      if (state.activeTrip && state.activeTrip._id === tripId) {
+        return { activeTrip: res.data.data };
+      }
+      return state;
+    });
+    await get().fetchTrips();
   },
 }));

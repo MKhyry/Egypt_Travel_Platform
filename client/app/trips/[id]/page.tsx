@@ -5,7 +5,6 @@ import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
 import { packagesAPI } from '@/lib/api';
-import SimpleFooter from '@/components/layout/SimpleFooter';
 
 export default function TripDetailPage() {
   const { id } = useParams();
@@ -77,10 +76,7 @@ export default function TripDetailPage() {
             <span className="font-body-md text-on-surface-variant">/ person</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="/my-trip" className="px-6 py-3 border border-secondary text-secondary hover:bg-secondary/5 font-label-caps text-label-caps transition-colors uppercase tracking-widest">
-              Add to My Trip
-            </Link>
-            <Link href="/booking" className="px-8 py-3 bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary transition-colors font-label-caps text-label-caps uppercase tracking-widest shadow-md">
+            <Link href={`/booking?packageId=${id}`} className="px-8 py-3 bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary transition-colors font-label-caps text-label-caps uppercase tracking-widest shadow-md">
               Book Trip
             </Link>
           </div>
@@ -249,7 +245,6 @@ export default function TripDetailPage() {
         </div>
       </div>
 
-      <SimpleFooter />
     </MainLayout>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
@@ -12,9 +12,10 @@ import SimpleFooter from '@/components/layout/SimpleFooter';
 const CITIES = ['Cairo', 'Giza', 'Luxor', 'Aswan', 'Alexandria', 'Hurghada', 'Farafra'];
 const STARS = [5, 4, 3, 2, 1];
 
-export default function HotelsPage() {
+function HotelsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
+
   const [hotels, setHotels] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [city, setCity] = useState(searchParams.get('city') || '');
@@ -171,7 +172,7 @@ export default function HotelsPage() {
                 <img src={selected.images?.[0] || 'https://placehold.co/600x300?text=Hotel'} alt={selected.name} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-6 left-6 text-white">
-                  <h2 className="font-h2 text-h2">{selected.name}</h2>
+                  <h2 className="font-h2">{selected.name}</h2>
                   <p className="font-body-md">{selected.city}, Egypt</p>
                 </div>
               </div>
@@ -188,14 +189,16 @@ export default function HotelsPage() {
                   </div>
                 </div>
                 <p className="font-body-md text-on-surface-variant mb-6">{selected.description}</p>
-                <div className="mb-6">
-                  <h4 className="font-label-caps text-label-caps text-on-surface mb-3 border-b border-outline-variant pb-2">Amenities</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {selected.amenities?.map((a: string) => (
-                      <span key={a} className="bg-secondary-container text-on-secondary-container text-xs font-bold px-3 py-1 rounded-full">{a}</span>
-                    ))}
+                {selected.amenities?.length > 0 && (
+                  <div className="mb-6">
+                    <h4 className="font-label-caps text-label-caps text-on-surface mb-3 border-b border-outline-variant pb-2">Amenities</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selected.amenities.map((a: string) => (
+                        <span key={a} className="bg-secondary-container text-on-secondary-container text-xs font-bold px-3 py-1 rounded-full">{a}</span>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
                 {selected.nearbyPlaces?.length > 0 && (
                   <div className="mb-8">
                     <h4 className="font-label-caps text-label-caps text-on-surface mb-3 border-b border-outline-variant pb-2">Nearby Places</h4>
@@ -228,5 +231,13 @@ export default function HotelsPage() {
         </section>
       </main>
     </MainLayout>
+  );
+}
+
+export default function HotelsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <HotelsContent />
+    </Suspense>
   );
 }

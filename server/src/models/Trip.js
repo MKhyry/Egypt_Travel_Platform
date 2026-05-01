@@ -36,6 +36,23 @@ const tripSchema = new mongoose.Schema(
         },
       },
     ],
+    hotels: [
+      {
+        hotel: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Hotel',
+        },
+        checkIn: {
+          type: Date,
+          required: true,
+        },
+        nights: {
+          type: Number,
+          required: true,
+          min: 1,
+        },
+      },
+    ],
     status: {
       type: String,
       enum: ['planning', 'confirmed', 'completed'],

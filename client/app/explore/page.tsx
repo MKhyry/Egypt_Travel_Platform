@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
@@ -11,11 +11,11 @@ import { useTripStore } from '@/store/tripStore';
 const CATEGORIES = ['historical', 'nature', 'beach', 'adventure', 'cultural'];
 const CITIES = ['Cairo', 'Giza', 'Luxor', 'Aswan', 'Alexandria', 'Sharm El Sheikh', 'Hurghada', 'Farafra', 'Siwa'];
 
-export default function ExplorePage() {
+function ExploreContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { user } = useAuthStore();
-  const { trips, fetchTrips } = useTripStore();
+  const { trips, fetchTrips, addPlace } = useTripStore();
 
   const [places, setPlaces] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -51,7 +51,7 @@ export default function ExplorePage() {
     if (!selectedTripId) return;
     setAddLoading(true);
     try {
-      await tripsAPI.addPlace(selectedTripId, { placeId: modalPlace._id, day: selectedDay });
+      await addPlace(selectedTripId, modalPlace._id, selectedDay);
       setAddSuccess(`Added to your trip!`);
       setTimeout(() => { setModalPlace(null); setAddSuccess(''); }, 1500);
     } catch (err: any) {
@@ -211,6 +211,7 @@ export default function ExplorePage() {
 
           {/* ── Listings ── */}
           <div className="lg:col-span-3 space-y-gutter">
+
             {/* Sort Bar */}
             <div className="flex flex-col md:flex-row justify-between items-center bg-surface-container-low p-4 rounded-xl gap-4">
               <p className="font-body-md text-on-surface-variant">
@@ -298,5 +299,13 @@ export default function ExplorePage() {
         </div>
       </main>
     </MainLayout>
+  );
+}
+
+export default function ExplorePage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <ExploreContent />
+    </Suspense>
   );
 }

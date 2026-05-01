@@ -1,0 +1,189 @@
+[
+  {
+    "title": "Classic Egypt", "duration": "8 Days / 7 Nights", "days": 8, "cities": "Cairo - Giza - Luxor - Aswan", "price": 2450, "tier": "Luxury",
+    "description": "Experience the ultimate journey through ancient history, taking you from the towering Pyramids to the majestic temples of the Nile.",
+    "heroDescription": "Discover the timeless wonders of Egypt on this premium 8-day adventure. Enjoy exclusive tours of the Giza Plateau, uncover the secrets of the Valley of the Kings, and sail the historic Nile while staying in unparalleled 5-star luxury.",
+    "imageKey": "classic-egypt", "image": "https://placehold.co/1200x800/e0c090/FFF?text=Classic+Egypt", "routeMapImage": "",
+    "regions": ["Cairo", "Luxor", "Aswan"], "route": ["Cairo", "Giza", "Luxor", "Aswan"], "rating": 4.9, "reviews": 128,
+    "includes": ["7 nights in 5-star luxury hotels", "Private Egyptologist guide", "Domestic flights", "Daily breakfast and select dinners", "VIP access to tombs"], "icons": ["account_balance", "hotel", "flight"],
+    "itinerary": [
+      { "dayLabel": "1-2", "title": "Pyramids & The Sphinx", "description": "Arrive in Cairo and marvel at the majestic Pyramids of Giza and the Sphinx. Enjoy a luxury stay right by the plateau.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Marriott Mena House", "accentIcon": "change_history", "accentLabel": "Ancient Wonders" },
+      { "dayLabel": "3-5", "title": "Temples of Luxor", "description": "Fly to Luxor to explore Karnak Temple and the Valley of the Kings, stepping into the grand tombs of ancient pharaohs.", "imageKey": "", "image": "", "meals": "Breakfast, Dinner", "stay": "Sofitel Winter Palace", "accentIcon": "wb_sunny", "accentLabel": "Pharaoh's Path" },
+      { "dayLabel": "6-8", "title": "Aswan's Island Magic", "description": "Journey to Aswan to visit the Philae Temple and relax on the Nile before departing from this beautiful southern city.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Sofitel Legend Old Cataract", "accentIcon": "sailing", "accentLabel": "Nile Tranquility" }
+    ],
+    "hotels": [
+      { "name": "Marriott Mena House", "city": "Giza", "description": "A historic, luxury hotel offering unparalleled, up-close views of the magnificent Great Pyramids.", "imageKey": "", "image": "https://placehold.co/600x400/e0c090/FFF?text=Mena+House" },
+      { "name": "Sofitel Winter Palace", "city": "Luxor", "description": "A historic, grand hotel on the banks of the Nile built in 1886.", "imageKey": "", "image": "https://placehold.co/600x400/f0e0d0/FFF?text=Winter+Palace" }
+    ]
+  },
+  {
+    "title": "Nile Majesty", "duration": "5 Days / 4 Nights", "days": 5, "cities": "Luxor - Aswan", "price": 850, "tier": "Essential",
+    "description": "A fast-paced yet comprehensive journey covering the most significant archaeological treasures of Upper Egypt.",
+    "heroDescription": "Perfect for travelers short on time but hungry for history. This 5-day essential route captures the magic of Luxor's sprawling temples and the serenity of Aswan's Nubian heritage at an unbeatable value.",
+    "imageKey": "nile-majesty", "image": "https://placehold.co/1200x800/d0a080/FFF?text=Nile+Majesty", "routeMapImage": "",
+    "regions": ["Luxor", "Aswan"], "route": ["Luxor", "Aswan"], "rating": 4.6, "reviews": 95,
+    "includes": ["4 nights accommodation", "Guided group tours", "Airport transfers", "Daily breakfast"], "icons": ["directions_boat", "museum", "groups"],
+    "itinerary": [
+      { "dayLabel": "1-2", "title": "Luxor Exploration", "description": "Discover the vast Karnak complex and the illuminated Luxor Temple by night.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Steigenberger Nile Palace", "accentIcon": "explore", "accentLabel": "Temple Circuit" },
+      { "dayLabel": "3-5", "title": "Aswan Highlights", "description": "Travel south to Aswan to witness the Unfinished Obelisk and the island-bound Philae Temple.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Movenpick Resort Aswan", "accentIcon": "waves", "accentLabel": "River Views" }
+    ],
+    "hotels": [
+      { "name": "Steigenberger Nile Palace", "city": "Luxor", "description": "Offering beautiful architecture and excellent river views in the heart of Luxor.", "imageKey": "", "image": "https://placehold.co/600x400/e0d0c0/FFF?text=Steigenberger+Luxor" }
+    ]
+  },
+  {
+    "title": "Red Sea Bliss", "duration": "6 Days / 5 Nights", "days": 6, "cities": "Hurghada", "price": 1250, "tier": "Boutique",
+    "description": "Escape to the coastal paradise of Hurghada for a week of pristine beaches, snorkeling, and complete relaxation.",
+    "heroDescription": "Unwind on the golden shores of the Red Sea. Enjoy exclusive boutique resort amenities, daily snorkeling trips to vibrant coral reefs, and tranquil sunset dinners overlooking the water.",
+    "imageKey": "red-sea-bliss", "image": "https://placehold.co/1200x800/40c0e0/FFF?text=Red+Sea+Bliss", "routeMapImage": "",
+    "regions": ["Red Sea"], "route": ["Hurghada"], "rating": 4.7, "reviews": 112,
+    "includes": ["5 nights at a premium beachfront resort", "All-inclusive dining", "One full-day boat trip", "Spa access"], "icons": ["pool", "beach_access", "restaurant"],
+    "itinerary": [
+      { "dayLabel": "1-2", "title": "Arrival & Relaxation", "description": "Settle into your beachfront resort and enjoy the all-inclusive amenities and private beach.", "imageKey": "", "image": "", "meals": "All Inclusive", "stay": "Sunrise Crystal Bay", "accentIcon": "spa", "accentLabel": "Unwind" },
+      { "dayLabel": "3-4", "title": "Giftun Island Adventure", "description": "Take a boat out to Giftun Island for a day of world-class snorkeling among vibrant reefs.", "imageKey": "", "image": "", "meals": "All Inclusive", "stay": "Sunrise Crystal Bay", "accentIcon": "sailing", "accentLabel": "Marine Life" },
+      { "dayLabel": "5-6", "title": "Aqua Fun & Departure", "description": "Enjoy the thrilling slides at Makadi Bay Water World before your departure.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Sunrise Crystal Bay", "accentIcon": "water_drop", "accentLabel": "Thrills" }
+    ],
+    "hotels": [
+      { "name": "Sunrise Crystal Bay", "city": "Hurghada", "description": "An elegant, adults-only resort featuring a tranquil private lagoon.", "imageKey": "", "image": "https://placehold.co/600x400/a0d0e0/FFF?text=Crystal+Bay" }
+    ]
+  },
+  {
+    "title": "Sharm Escapade", "duration": "7 Days / 6 Nights", "days": 7, "cities": "Sharm El Sheikh", "price": 2800, "tier": "Luxury",
+    "description": "Experience the absolute pinnacle of luxury diving and desert resort living on the spectacular Sinai Peninsula.",
+    "heroDescription": "Immerse yourself in world-class diving at Ras Mohammed and lavish pampering at a premium 5-star resort. This package is designed for those who demand the finest service, dining, and marine exploration.",
+    "imageKey": "sharm-escapade", "image": "https://placehold.co/1200x800/004080/FFF?text=Sharm+Escapade", "routeMapImage": "",
+    "regions": ["Red Sea"], "route": ["Sharm El Sheikh"], "rating": 4.9, "reviews": 85,
+    "includes": ["6 nights luxury accommodation", "Private airport transfers", "Two guided diving/snorkeling trips", "Daily breakfast and dinner"], "icons": ["scuba_diving", "star", "room_service"],
+    "itinerary": [
+      { "dayLabel": "1-3", "title": "Luxury Check-in & Naama Bay", "description": "Arrive at your premium resort. Spend your first days exploring the vibrant Naama Bay and enjoying the house reef.", "imageKey": "", "image": "", "meals": "Breakfast, Dinner", "stay": "Four Seasons Resort Sharm El Sheikh", "accentIcon": "local_bar", "accentLabel": "Coastal Vibe" },
+      { "dayLabel": "4-7", "title": "Ras Mohammed Diving", "description": "Experience guided excursions into Ras Mohammed National Park, witnessing some of the world's best coral ecosystems.", "imageKey": "", "image": "", "meals": "Breakfast, Dinner", "stay": "Four Seasons Resort Sharm El Sheikh", "accentIcon": "scuba_diving", "accentLabel": "Deep Blue" }
+    ],
+    "hotels": [
+      { "name": "Four Seasons Resort Sharm El Sheikh", "city": "Sharm El Sheikh", "description": "A stunning luxury resort offering world-class diving and spectacular Red Sea views.", "imageKey": "", "image": "https://placehold.co/600x400/b0d0e0/FFF?text=Four+Seasons+Sharm" }
+    ]
+  },
+  {
+    "title": "Desert Safari", "duration": "5 Days / 4 Nights", "days": 5, "cities": "Cairo - Farafra", "price": 650, "tier": "Essential",
+    "description": "Leave the city behind and venture deep into the surreal, chalk-white landscapes of the Egyptian Western Desert.",
+    "heroDescription": "An adventure-focused itinerary that trades city noise for starry nights. Explore the ancient wonders of Cairo before heading off-road into the breathtaking White Desert and Crystal Mountain.",
+    "imageKey": "desert-safari", "image": "https://placehold.co/1200x800/ffffff/000?text=Desert+Safari", "routeMapImage": "",
+    "regions": ["Cairo", "Western Desert"], "route": ["Cairo", "Farafra"], "rating": 4.5, "reviews": 60,
+    "includes": ["2 nights in Cairo", "2 nights desert eco-lodge", "4x4 Desert Safari", "Camping equipment if needed", "Local guide"], "icons": ["landscape", "directions_car", "eco"],
+    "itinerary": [
+      { "dayLabel": "1-2", "title": "Cairo Culture", "description": "Explore the vibrant Khan el-Khalili bazaar and the historical Cairo Citadel before your desert journey.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Fairmont Nile City", "accentIcon": "storefront", "accentLabel": "City Pulse" },
+      { "dayLabel": "3-5", "title": "Into the White Desert", "description": "Take a 4x4 into the Farafra depression. Witness the sparkling Crystal Mountain and camp near the surreal chalk formations.", "imageKey": "", "image": "", "meals": "Breakfast, Lunch, Dinner", "stay": "Badawiya Hotel Farafra", "accentIcon": "terrain", "accentLabel": "Off-Road" }
+    ],
+    "hotels": [
+      { "name": "Badawiya Hotel Farafra", "city": "Farafra", "description": "An authentic mud-brick lodge providing comfortable basecamps for desert exploration.", "imageKey": "", "image": "https://placehold.co/600x400/d0b080/FFF?text=Badawiya+Hotel" }
+    ]
+  },
+  {
+    "title": "Oasis Retreat", "duration": "6 Days / 5 Nights", "days": 6, "cities": "Cairo - Siwa", "price": 1400, "tier": "Boutique",
+    "description": "Disconnect entirely in the legendary Siwa Oasis, staying in a world-renowned eco-lodge with no electricity.",
+    "heroDescription": "A transformative journey blending Cairo's historic charm with the utter isolation and peace of the Siwa Oasis. Bathe in Cleopatra's Pool and sleep under the stars in unparalleled eco-luxury.",
+    "imageKey": "oasis-retreat", "image": "https://placehold.co/1200x800/c0a080/FFF?text=Oasis+Retreat", "routeMapImage": "",
+    "regions": ["Cairo", "Western Desert"], "route": ["Cairo", "Siwa"], "rating": 4.8, "reviews": 45,
+    "includes": ["Internal transfers", "Eco-lodge accommodation", "All meals in Siwa", "Guided oasis tour"], "icons": ["nature_people", "spa", "wb_twilight"],
+    "itinerary": [
+      { "dayLabel": "1-2", "title": "Cairo Transit", "description": "Arrive in Cairo and relax in a boutique Nile hotel before your long journey to the oasis.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Kempinski Nile Hotel", "accentIcon": "hotel", "accentLabel": "Rest" },
+      { "dayLabel": "3-6", "title": "Siwa Sanctuary", "description": "Travel to Siwa. Explore the Shali Fortress, swim in Cleopatra's Pool, and enjoy candlelit dinners at your eco-lodge.", "imageKey": "", "image": "", "meals": "Breakfast, Lunch, Dinner", "stay": "Adrere Amellal", "accentIcon": "eco", "accentLabel": "Unplugged" }
+    ],
+    "hotels": [
+      { "name": "Adrere Amellal", "city": "Siwa", "description": "A world-famous, electricity-free eco-lodge built into a mountain.", "imageKey": "", "image": "https://placehold.co/600x400/c0a080/FFF?text=Adrere+Amellal" }
+    ]
+  },
+  {
+    "title": "Alexandrian Dream", "duration": "5 Days / 4 Nights", "days": 5, "cities": "Cairo - Alexandria", "price": 750, "tier": "Essential",
+    "description": "A coastal and cultural pairing of Egypt's two greatest cities, featuring museums, citadels, and the Mediterranean Sea.",
+    "heroDescription": "Trace the steps of ancient scholars and kings. From the bustling streets of Islamic Cairo to the refreshing sea breeze of Alexandria's Corniche, this trip highlights Egypt's Mediterranean heritage.",
+    "imageKey": "alexandrian-dream", "image": "https://placehold.co/1200x800/4080c0/FFF?text=Alexandria", "routeMapImage": "",
+    "regions": ["Cairo", "Mediterranean Coast"], "route": ["Cairo", "Alexandria"], "rating": 4.4, "reviews": 78,
+    "includes": ["Train/Car transfer to Alexandria", "4 nights accommodation", "Library of Alexandria passes", "Daily breakfast"], "icons": ["train", "menu_book", "waves"],
+    "itinerary": [
+      { "dayLabel": "1-2", "title": "Cairo Classics", "description": "Visit the Egyptian Museum and take a peaceful stroll through Al-Azhar Park.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Sofitel Cairo Nile El Gezirah", "accentIcon": "park", "accentLabel": "City Greenery" },
+      { "dayLabel": "3-5", "title": "Mediterranean Pearl", "description": "Travel to Alexandria. Visit the iconic Bibliotheca Alexandrina and the imposing Qaitbay Citadel on the harbor.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Steigenberger Cecil Hotel", "accentIcon": "auto_stories", "accentLabel": "Ancient Knowledge" }
+    ],
+    "hotels": [
+      { "name": "Steigenberger Cecil Hotel", "city": "Alexandria", "description": "A historic 1920s hotel perfectly located directly on the sweeping Alexandria Corniche.", "imageKey": "", "image": "https://placehold.co/600x400/d0c0b0/FFF?text=Cecil+Hotel" }
+    ]
+  },
+  {
+    "title": "Diver's Paradise", "duration": "6 Days / 5 Nights", "days": 6, "cities": "Dahab", "price": 950, "tier": "Boutique",
+    "description": "A laid-back, adventure-packed stay in Dahab, famous for its bohemian vibe and the world-renowned Blue Hole.",
+    "heroDescription": "For those who prefer a relaxed pace mixed with intense adventure. Dahab offers incredible underwater sinkholes by day and a vibrant, chilled-out beachfront cafe culture by night.",
+    "imageKey": "diver-paradise", "image": "https://placehold.co/1200x800/002060/FFF?text=Dahab+Diving", "routeMapImage": "",
+    "regions": ["Red Sea"], "route": ["Dahab"], "rating": 4.8, "reviews": 105,
+    "includes": ["Airport transfers from Sharm", "5 nights beachfront stay", "Guided Blue Hole dive/snorkel", "Mount Sinai trek"], "icons": ["surfing", "terrain", "coffee"],
+    "itinerary": [
+      { "dayLabel": "1-3", "title": "The Blue Hole", "description": "Settle into your beachfront resort and spend your days snorkeling or diving the infamous Blue Hole.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Swiss Inn Resort Dahab", "accentIcon": "scuba_diving", "accentLabel": "Deep Dive" },
+      { "dayLabel": "4-6", "title": "Mount Sinai Ascent", "description": "Embark on a nighttime trek up Mount Sinai for a spectacular sunrise, followed by relaxation on the beach.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Swiss Inn Resort Dahab", "accentIcon": "hiking", "accentLabel": "Sacred Peak" }
+    ],
+    "hotels": [
+      { "name": "Swiss Inn Resort Dahab", "city": "Dahab", "description": "A relaxed, family-friendly beachfront resort set directly on the golden sands of the Red Sea.", "imageKey": "", "image": "https://placehold.co/600x400/e0d080/FFF?text=Swiss+Inn+Dahab" }
+    ]
+  },
+  {
+    "title": "Ultimate Egypt", "duration": "12 Days / 11 Nights", "days": 12, "cities": "Cairo - Giza - Luxor - Aswan - Hurghada", "price": 4200, "tier": "Luxury",
+    "description": "The grand tour. See every major highlight of Egypt, from the northern pyramids down to the southern temples, ending on the beach.",
+    "heroDescription": "Leave no stone unturned. This comprehensive 12-day luxury expedition perfectly balances the intense historical exploration of the Nile Valley with the sheer relaxation of a premium Red Sea resort.",
+    "imageKey": "ultimate-egypt", "image": "https://placehold.co/1200x800/e0b080/FFF?text=Ultimate+Egypt", "routeMapImage": "",
+    "regions": ["Cairo", "Luxor", "Aswan", "Red Sea"], "route": ["Cairo", "Giza", "Luxor", "Aswan", "Hurghada"], "rating": 5.0, "reviews": 210,
+    "includes": ["All domestic flights", "11 nights 5-star accommodation", "Private guides throughout", "All-inclusive in Hurghada", "VIP entrance fees"], "icons": ["flight_takeoff", "diamond", "map"],
+    "itinerary": [
+      { "dayLabel": "1-3", "title": "Pyramids to Museums", "description": "Explore the Giza Plateau and the incredible artifacts of the Egyptian Museum.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "The Nile Ritz-Carlton", "accentIcon": "account_balance", "accentLabel": "Heritage" },
+      { "dayLabel": "4-7", "title": "Nile River Valley", "description": "Fly to Luxor, explore the Valley of the Kings, and travel down to Aswan to see the Abu Simbel temples.", "imageKey": "", "image": "", "meals": "Breakfast, Lunch", "stay": "Hilton Luxor Resort", "accentIcon": "sailing", "accentLabel": "River Kings" },
+      { "dayLabel": "8-12", "title": "Red Sea Recovery", "description": "Fly to Hurghada for four days of total relaxation, beach lounging, and luxury dining.", "imageKey": "", "image": "", "meals": "All Inclusive", "stay": "Steigenberger ALDAU Beach", "accentIcon": "beach_access", "accentLabel": "Resort Life" }
+    ],
+    "hotels": [
+      { "name": "The Nile Ritz-Carlton", "city": "Cairo", "description": "An iconic luxury hotel located in the heart of downtown Cairo.", "imageKey": "", "image": "https://placehold.co/600x400/a0c0e0/FFF?text=Nile+Ritz-Carlton" },
+      { "name": "Steigenberger ALDAU Beach", "city": "Hurghada", "description": "A spectacular beach resort offering expansive pools and private golf.", "imageKey": "", "image": "https://placehold.co/600x400/80c0e0/FFF?text=ALDAU+Beach" }
+    ]
+  },
+  {
+    "title": "Historical Depths", "duration": "8 Days / 7 Nights", "days": 8, "cities": "Alexandria - Luxor - Aswan", "price": 1850, "tier": "Boutique",
+    "description": "Skip Cairo entirely and focus on the deep Greek, Roman, and Pharaonic histories of Alexandria and Upper Egypt.",
+    "heroDescription": "A unique route designed for repeat visitors or intense history buffs. Contrast the Greco-Roman ruins and coastal fortresses of Alexandria with the massive Pharaonic pillars of Luxor and Aswan.",
+    "imageKey": "historical-depths", "image": "https://placehold.co/1200x800/c0a080/FFF?text=Historical+Depths", "routeMapImage": "",
+    "regions": ["Mediterranean Coast", "Luxor", "Aswan"], "route": ["Alexandria", "Luxor", "Aswan"], "rating": 4.6, "reviews": 42,
+    "includes": ["Domestic flights", "7 nights boutique accommodation", "Expert archaeological guides", "Daily breakfast"], "icons": ["history_edu", "castle", "flight"],
+    "itinerary": [
+      { "dayLabel": "1-3", "title": "Alexandria's Past", "description": "Discover the Qaitbay Citadel and the stunning Montazah Palace Gardens.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Four Seasons Hotel Alexandria", "accentIcon": "fort", "accentLabel": "Coastal Forts" },
+      { "dayLabel": "4-5", "title": "Luxor's Grandeur", "description": "Fly south to Luxor to witness the incredible scale of Karnak Temple and the Colossi of Memnon.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Steigenberger Nile Palace", "accentIcon": "church", "accentLabel": "Ancient Pillars" },
+      { "dayLabel": "6-8", "title": "Aswan's Monuments", "description": "Conclude your trip exploring the Unfinished Obelisk and the island temple of Philae.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Movenpick Resort Aswan", "accentIcon": "monument", "accentLabel": "Stone Carving" }
+    ],
+    "hotels": [
+      { "name": "Four Seasons Hotel Alexandria", "city": "Alexandria", "description": "An ultra-luxurious, Mediterranean-style resort offering a private sandy beach.", "imageKey": "", "image": "https://placehold.co/600x400/a0c0e0/FFF?text=Four+Seasons+Alexandria" }
+    ]
+  },
+  {
+    "title": "Nature & History", "duration": "7 Days / 6 Nights", "days": 7, "cities": "Aswan - Farafra", "price": 1100, "tier": "Essential",
+    "description": "An off-beat path combining the lush Nile environment of Aswan with the stark, alien beauty of the Western Desert.",
+    "heroDescription": "Experience Egypt's environmental extremes. Float down the Nile among the green islands of Aswan, then travel to the remote Farafra oasis to witness the bizarre chalk sculptures of the White Desert.",
+    "imageKey": "nature-history", "image": "https://placehold.co/1200x800/e0b080/FFF?text=Nature+History", "routeMapImage": "",
+    "regions": ["Aswan", "Western Desert"], "route": ["Aswan", "Farafra"], "rating": 4.5, "reviews": 38,
+    "includes": ["Internal travel arrangements", "Desert safari transport", "6 nights mixed accommodation", "Select meals"], "icons": ["nature", "explore", "nights_stay"],
+    "itinerary": [
+      { "dayLabel": "1-3", "title": "Aswan Islands", "description": "Explore the Philae Temple and sail the Nile around Elephantine Island.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Movenpick Resort Aswan", "accentIcon": "water", "accentLabel": "River Life" },
+      { "dayLabel": "4-7", "title": "White Desert Expedition", "description": "Travel to Farafra. Camp under the stars surrounded by the massive white chalk rock formations.", "imageKey": "", "image": "", "meals": "Breakfast, Dinner", "stay": "Badawiya Hotel Farafra", "accentIcon": "landscape", "accentLabel": "Surreal Sands" }
+    ],
+    "hotels": [
+      { "name": "Badawiya Hotel Farafra", "city": "Farafra", "description": "An authentic mud-brick lodge providing comfortable basecamps for desert exploration.", "imageKey": "", "image": "https://placehold.co/600x400/d0b080/FFF?text=Badawiya+Hotel" }
+    ]
+  },
+  {
+    "title": "Coastal Heritage", "duration": "9 Days / 8 Nights", "days": 9, "cities": "Alexandria - Sharm El Sheikh", "price": 2600, "tier": "Luxury",
+    "description": "Experience Egypt's dual coastlines—the historical Mediterranean north and the vibrant, reef-filled Red Sea east.",
+    "heroDescription": "A tale of two seas. Begin in the crisp Mediterranean air of Alexandria exploring Greek ruins, then fly to the Sinai Peninsula to indulge in the world's best diving and luxury resorts in Sharm El Sheikh.",
+    "imageKey": "coastal-heritage", "image": "https://placehold.co/1200x800/40a0c0/FFF?text=Coastal+Heritage", "routeMapImage": "",
+    "regions": ["Mediterranean Coast", "Red Sea"], "route": ["Alexandria", "Sharm El Sheikh"], "rating": 4.8, "reviews": 65,
+    "includes": ["Domestic flights", "8 nights in 5-star resorts", "Alexandria city tour", "Red Sea boat excursion", "Daily breakfast"], "icons": ["sailing", "beach_access", "flight"],
+    "itinerary": [
+      { "dayLabel": "1-4", "title": "Mediterranean History", "description": "Visit the Bibliotheca Alexandrina and stroll the Montazah Palace Gardens overlooking the sea.", "imageKey": "", "image": "", "meals": "Breakfast", "stay": "Four Seasons Hotel Alexandria", "accentIcon": "import_contacts", "accentLabel": "Library & Gardens" },
+      { "dayLabel": "5-9", "title": "Red Sea Luxury", "description": "Fly to Sharm El Sheikh. Spend your days snorkeling at Ras Mohammed and relaxing in premium cabanas.", "imageKey": "", "image": "", "meals": "Breakfast, Dinner", "stay": "Rixos Premium Seagate", "accentIcon": "pool", "accentLabel": "Premium Resort" }
+    ],
+    "hotels": [
+      { "name": "Four Seasons Hotel Alexandria", "city": "Alexandria", "description": "An ultra-luxurious resort offering a private sandy beach and classic elegance.", "imageKey": "", "image": "https://placehold.co/600x400/a0c0e0/FFF?text=Four+Seasons+Alexandria" },
+      { "name": "Rixos Premium Seagate", "city": "Sharm El Sheikh", "description": "A massive, ultra-all-inclusive premium resort featuring luxury cabanas.", "imageKey": "", "image": "https://placehold.co/600x400/c0e0f0/FFF?text=Rixos+Seagate" }
+    ]
+  }
+]

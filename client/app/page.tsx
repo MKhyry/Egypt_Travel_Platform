@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
-import { placesAPI } from '@/lib/api';
+import { placesAPI, packagesAPI } from '@/lib/api';
 
 const destinations = [
   { name: 'Cairo', subtitle: 'The Mother of the World', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBLxW4QH9Kgv7RUUGFqOXH_yGfULmupukrpUM-1MtujoWBoEtGX_yGLHOR-6VyI7XDZut2DuJUElwpNbgkQoxTIpjzGMd8vlT5xSz1LB8u7oKUF79lmjKsLK1xECjWDYAg_wN7kX_q9N_xyBZFFMSWysSOkQvamIoc_lftv16Ar9-sT5HdqiO6fcCo08EN0GS6nTPNUErJBwJ5Ep_hjNDgy_0Em7EiqbJH2NoYWdutET4_RcfN4uWD_4Y8hUmRPSNGLBuB-YuMEf4U' },
@@ -20,6 +20,7 @@ const packages = [
 
 export default function HomePage() {
   const [topPlaces, setTopPlaces] = useState<any[]>([]);
+  const [homePackages, setHomePackages] = useState<any[]>([]);
 
   useEffect(() => {
     placesAPI.getAll()
@@ -30,6 +31,10 @@ export default function HomePage() {
         setTopPlaces(sorted);
       })
       .catch(() => {});
+
+    packagesAPI.getAll()
+      .then((res) => setHomePackages(res.data.data.slice(0, 3)))
+      .catch(() => setHomePackages([]));
   }, []);
 
   return (
@@ -198,38 +203,40 @@ export default function HomePage() {
               <h2 className="font-h2 text-h2 text-on-surface">Featured Packages</h2>
             </div>
             <Link href="/trips" className="text-primary font-bold hover:underline font-body-md">
-              View All Packages
+              View All Trips
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            {packages.map((pkg) => (
-              <div key={pkg.title} className="bg-white rounded-xl shadow-sm overflow-hidden border border-stone-100 hover:shadow-lg transition-all duration-300">
-                <div className="h-64 relative">
-                  <img src={pkg.image} alt={pkg.title} className="w-full h-full object-cover" />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-primary font-bold text-sm">
-                    {pkg.days} Days
-                  </div>
-                </div>
-                <div className="p-8">
-                  <div className="flex items-center gap-2 mb-3">
-                    {pkg.tags.map((tag) => (
-                      <span key={tag} className="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">{tag}</span>
-                    ))}
-                  </div>
-                  <h3 className="font-h3 text-h3 mb-4 text-on-surface">{pkg.title}</h3>
-                  <p className="text-on-surface-variant mb-6 text-sm font-body-md">{pkg.description}</p>
-                  <div className="flex justify-between items-center pt-6 border-t border-stone-100">
-                    <div>
-                      <span className="text-xs text-stone-400 block uppercase font-bold tracking-tighter">Starting from</span>
-                      <span className="text-xl font-h3 text-primary">{pkg.price}</span>
+            {homePackages.length === 0
+              ? [0, 1, 2].map((i) => (
+                  <div key={i} className="bg-surface-container-high rounded-xl h-96 animate-pulse" />
+                ))
+              : homePackages.map((pkg) => (
+                  <Link key={pkg._id} href={`/trips/${pkg._id}`} className="bg-white rounded-xl shadow-sm overflow-hidden border border-stone-100 hover:shadow-lg transition-all duration-300 block">
+                    <div className="h-64 relative">
+                      <img src={pkg.image} alt={pkg.title} className="w-full h-full object-cover" />
+                      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-primary font-bold text-sm">
+                        {pkg.days} Days
+                      </div>
                     </div>
-                    <Link href="/trips" className="bg-[#C5A059] text-white p-3 rounded-lg active:scale-95 transition-transform">
-                      <span className="material-symbols-outlined">calendar_today</span>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
+                    <div className="p-8">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">{pkg.tier}</span>
+                      </div>
+                      <h3 className="font-h3 text-h3 mb-4 text-on-surface">{pkg.title}</h3>
+                      <p className="text-on-surface-variant mb-6 text-sm font-body-md line-clamp-2">{pkg.description}</p>
+                      <div className="flex justify-between items-center pt-6 border-t border-stone-100">
+                        <div>
+                          <span className="text-xs text-stone-400 block uppercase font-bold tracking-tighter">Starting from</span>
+                          <span className="text-xl font-h3 text-primary">${pkg.price.toLocaleString()}</span>
+                        </div>
+                        <div className="bg-[#C5A059] text-white p-3 rounded-lg active:scale-95 transition-transform">
+                          <span className="material-symbols-outlined">calendar_today</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
           </div>
         </div>
       </section>

@@ -5,14 +5,20 @@ import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
 import { hotelsAPI } from '@/lib/api';
-import SimpleFooter from '@/components/layout/SimpleFooter';
+import { useTripStore } from '@/store/tripStore';
+import { useAuthStore } from '@/store/authStore';
 
 export default function HotelDetailPage() {
   const { id } = useParams();
   const router = useRouter();
+  const { user } = useAuthStore();
+  const { trips, addHotel } = useTripStore();
   const [hotel, setHotel] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [checkIn, setCheckIn] = useState('');
   const [nights, setNights] = useState(3);
+  const [adding, setAdding] = useState(false);
+  const [addMsg, setAddMsg] = useState('');
 
   useEffect(() => {
     hotelsAPI.getById(id as string)
@@ -138,11 +144,7 @@ export default function HotelDetailPage() {
               <div className="space-y-4 mb-6">
                 <div>
                   <label className="font-label-caps text-label-caps text-on-surface-variant block mb-2">Check In</label>
-                  <input type="date" className="w-full bg-surface-container-low border-b border-outline-variant px-3 py-3 font-body-md focus:outline-none focus:border-primary-container" />
-                </div>
-                <div>
-                  <label className="font-label-caps text-label-caps text-on-surface-variant block mb-2">Check Out</label>
-                  <input type="date" className="w-full bg-surface-container-low border-b border-outline-variant px-3 py-3 font-body-md focus:outline-none focus:border-primary-container" />
+                  <input type="date" value={checkIn} onChange={(e) => setCheckIn(e.target.value)} className="w-full bg-surface-container-low border-b border-outline-variant px-3 py-3 font-body-md focus:outline-none focus:border-primary-container" />
                 </div>
                 <div>
                   <label className="font-label-caps text-label-caps text-on-surface-variant block mb-2">Nights: {nights}</label>
@@ -159,18 +161,35 @@ export default function HotelDetailPage() {
                   <span className="text-primary">${hotel.pricePerNight * nights}</span>
                 </div>
               </div>
-              <Link
-                href="/booking"
-                className="block w-full bg-tertiary-container text-white text-center font-label-caps text-label-caps py-4 uppercase tracking-widest hover:bg-tertiary transition-all active:scale-95 shadow-lg"
+
+              {addMsg && (
+                <p className={`text-sm mb-3 font-body-md ${addMsg.includes('Added') ? 'text-secondary' : 'text-error'}`}>
+                  {addMsg}
+                </p>
+              )}
+
+              <button
+                onClick={async () => {
+                  if (!user) { router.push('/login'); return; }
+                  if (!checkIn) { setAddMsg('Please select a check-in date'); return; }
+                  if (trips.length === 0) { setAddMsg('Please create a trip first'); return; }
+                  setAdding(true);
+                  setAddMsg('');
+                  try {
+                    await addHotel(trips[0]._id, id as string, checkIn, nights);
+                    setAddMsg('Added to your trip!');
+                    setTimeout(() => { router.push('/my-trip'); }, 1000);
+                  } catch (err: any) {
+                    setAddMsg(err?.response?.data?.message || 'Failed to add hotel');
+                  } finally {
+                    setAdding(false);
+                  }
+                }}
+                disabled={adding}
+                className="block w-full text-center bg-primary text-on-primary font-label-caps text-label-caps py-3 uppercase tracking-widest hover:bg-primary/90 transition-all disabled:opacity-60"
               >
-                Book Now
-              </Link>
-              <Link
-                href="/my-trip"
-                className="block w-full text-center border border-secondary text-secondary font-label-caps text-label-caps py-3 uppercase tracking-widest hover:bg-secondary-container transition-all mt-3"
-              >
-                Add to My Trip
-              </Link>
+                {adding ? 'Adding...' : 'Add to My Trip'}
+              </button>
             </div>
           </div>
         </div>
