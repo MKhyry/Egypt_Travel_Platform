@@ -52,17 +52,10 @@ export default function HotelDetailPage() {
         </nav>
 
         {/* ── Gallery ── */}
-        <section className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[600px] mb-stack-md">
-          <div className="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-xl shadow-sm">
-            <img src={hotel.images?.[0] || 'https://placehold.co/800x600?text=Hotel'} alt={hotel.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-            <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full flex items-center gap-2 shadow-sm">
-              <span className="material-symbols-outlined text-primary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>photo_camera</span>
-              <span className="text-xs font-bold text-on-surface">View All Photos</span>
-            </div>
-          </div>
-          {[1, 2, 3].map((i) => (
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 h-[500px] mb-stack-md">
+          {[0, 1].map((i) => (
             <div key={i} className="relative overflow-hidden rounded-xl shadow-sm">
-              <img src={hotel.images?.[i] || hotel.images?.[0] || 'https://placehold.co/400x300?text=Hotel'} alt={`${hotel.name} ${i}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src={hotel.images?.[i] || 'https://placehold.co/800x600?text=Hotel'} alt={`${hotel.name} ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
             </div>
           ))}
         </section>
