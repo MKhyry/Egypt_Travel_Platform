@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
@@ -11,7 +11,7 @@ import { tripsAPI, hotelsAPI } from '@/lib/api';
 export default function MyTripPage() {
   const router = useRouter();
   const { user, isInitialzing } = useAuthStore();
-  const { trips, activeTrip, fetchTrips, fetchTrip, createTrip, removePlace } = useTripStore();
+  const { trips, activeTrip, fetchTrips, fetchTrip, createTrip, removePlace, deleteTrip } = useTripStore();
 
   const [hotels, setHotels] = useState<any[]>([]);
   const [showCreateForm, setShowCreateForm] = useState(false);
@@ -19,6 +19,10 @@ export default function MyTripPage() {
   const [createLoading, setCreateLoading] = useState(false);
   const [createError, setCreateError] = useState('');
   const pathname = usePathname();
+
+  // Split trips into planning and confirmed
+  const planningTrips = useMemo(() => trips.filter((t: any) => t.status !== 'confirmed'), [trips]);
+  const confirmedTrips = useMemo(() => trips.filter((t: any) => t.status === 'confirmed'), [trips]);
 
   useEffect(() => {
     if (isInitialzing) return;
@@ -30,13 +34,12 @@ export default function MyTripPage() {
   useEffect(() => {
     if (pathname === '/my-trip' && user && !isInitialzing) {
       fetchTrips();
-      if (trips.length > 0) fetchTrip(trips[0]._id);
     }
   }, [pathname]);
 
   useEffect(() => {
-    if (trips.length > 0 && !activeTrip) fetchTrip(trips[0]._id);
-  }, [trips]);
+    if (planningTrips.length > 0 && !activeTrip) fetchTrip(planningTrips[0]._id);
+  }, [planningTrips]);
 
   useEffect(() => {
     if (activeTrip) {
@@ -109,13 +112,33 @@ export default function MyTripPage() {
             </div>
 
             <div className="flex gap-4 flex-wrap">
+              {/* Delete Trip */}
+              {activeTrip && activeTrip.status === 'planning' && (
+                <button
+                  onClick={async () => {
+                    if (confirm('Delete this trip? This cannot be undone.')) {
+                      try {
+                        await deleteTrip(activeTrip._id);
+                      } catch (err) {
+                        alert("Failed to delete trip. Please try again.");
+                        console.error("Delete trip error:", err);
+                      }
+                    }
+                  }}
+                  className="px-6 py-3 border border-error text-error font-medium rounded-lg hover:bg-error-container transition-colors flex items-center gap-2"
+                >
+                  <span className="material-symbols-outlined">delete</span>
+                  Delete Trip
+                </button>
+              )}
+
               {/* Trip Switcher */}
-              {trips.length > 1 && (
+              {planningTrips.length > 1 && (
                 <select
                   onChange={(e) => fetchTrip(e.target.value)}
                   className="border border-outline-variant text-on-surface px-4 py-3 rounded-lg font-body-md focus:outline-none focus:border-primary-container bg-surface"
                 >
-                  {trips.map((t: any) => (
+                  {planningTrips.map((t: any) => (
                     <option key={t._id} value={t._id}>{t.title}</option>
                   ))}
                 </select>
@@ -182,7 +205,7 @@ export default function MyTripPage() {
         )}
 
         {/* ── Trip Content ── */}
-        {activeTrip && (
+        {activeTrip && activeTrip.status === 'planning' && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
 
             {/* ── Itinerary (Left) ── */}
@@ -383,6 +406,46 @@ export default function MyTripPage() {
             </div>
           </div>
         )}
+
+        {/* ── Confirmed Trips Section ── */}
+        {confirmedTrips.length > 0 && (
+          <section className="mt-stack-lg">
+            <div className="flex items-center gap-2 mb-6">
+              <span className="material-symbols-outlined text-primary">check_circle</span>
+              <h2 className="font-h2 text-h2 text-on-surface">Confirmed Trips</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {confirmedTrips.map((trip: any) => (
+                <div key={trip._id} className="bg-surface-container-lowest rounded-xl p-6 border border-surface-container-high">
+                  <div className="flex justify-between items-start mb-3">
+                    <h3 className="font-h3 text-h3 text-on-surface">{trip.title}</h3>
+                    <span className="bg-secondary-container text-on-secondary-container text-xs font-bold px-3 py-1 rounded-full capitalize">{trip.status}</span>
+                  </div>
+                  <p className="text-sm text-on-surface-variant mb-2">
+                    <span className="material-symbols-outlined text-sm mr-1">calendar_today</span>
+                    {new Date(trip.startDate).toLocaleDateString("en-US", { month: "short", day: "numeric" })} — {new Date(trip.endDate).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                  </p>
+                  <p className="text-sm text-on-surface-variant mb-3">
+                    {trip.totalDays} days • {trip.places?.length || 0} places planned
+                  </p>
+                  <div className="space-y-1">
+                    {(trip.places || []).slice(0, 3).map((entry: any) => (
+                      <div key={entry._id} className="flex items-center gap-2 text-sm text-on-surface-variant">
+                        <span className="material-symbols-outlined text-xs">place</span>
+                        <span>{entry.place?.name}</span>
+                        <span className="text-xs opacity-60">({entry.place?.city})</span>
+                      </div>
+                    ))}
+                    {(trip.places?.length || 0) > 3 && (
+                      <p className="text-xs text-on-surface-variant">+{(trip.places?.length || 0) - 3} more...</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
       </main>
     </MainLayout>
   );

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
 import { hotelsAPI } from '@/lib/api';
@@ -12,7 +12,9 @@ export default function HotelDetailPage() {
   const { id } = useParams();
   const router = useRouter();
   const { user } = useAuthStore();
-  const { trips, addHotel } = useTripStore();
+  const { trips, activeTrip, addHotel } = useTripStore();
+  const searchParams = useSearchParams();
+  const urlTripId = searchParams?.get ? searchParams.get('tripId') : '';
   const [hotel, setHotel] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [checkIn, setCheckIn] = useState('');
@@ -166,10 +168,11 @@ export default function HotelDetailPage() {
                   if (!user) { router.push('/login'); return; }
                   if (!checkIn) { setAddMsg('Please select a check-in date'); return; }
                   if (trips.length === 0) { setAddMsg('Please create a trip first'); return; }
+                  const tripId = urlTripId || activeTrip?._id || (trips.length > 0 ? trips[0]._id : '');
                   setAdding(true);
                   setAddMsg('');
                   try {
-                    await addHotel(trips[0]._id, id as string, checkIn, nights);
+                    await addHotel(tripId, id as string, checkIn, nights);
                     setAddMsg('Added to your trip!');
                     setTimeout(() => { router.push('/my-trip'); }, 1000);
                   } catch (err: any) {

@@ -44,6 +44,7 @@ interface TripStore {
   addPlace: (tripId: string, placeId: string, day: number) => Promise<void>;
   removePlace: (tripId: string, placeEntryId: string) => Promise<void>;
   addHotel: (tripId: string, hotelId: string, checkIn: string, nights: number) => Promise<void>;
+  deleteTrip: (tripId: string) => Promise<void>;
 }
 
 export const useTripStore = create<TripStore>((set, get) => ({
@@ -54,7 +55,14 @@ export const useTripStore = create<TripStore>((set, get) => ({
   fetchTrips: async () => {
     set({ isLoading: true });
     const res = await tripsAPI.getAll();
-    set({ trips: res.data.data, isLoading: false });
+    const allTrips = res.data.data;
+    const currentActiveId = get().activeTrip?._id;
+    const matching = allTrips.find((t: Trip) => t._id === currentActiveId);
+    set({
+      trips: allTrips,
+      activeTrip: matching || (allTrips.filter((t: Trip) => t.status !== 'confirmed')[0] || null),
+      isLoading: false,
+    });
   },
 
   fetchTrip: async (id) => {
@@ -101,5 +109,16 @@ export const useTripStore = create<TripStore>((set, get) => ({
       return state;
     });
     await get().fetchTrips();
+  },
+
+  deleteTrip: async (tripId: string) => {
+    await tripsAPI.delete(tripId);
+    set((state) => {
+      const updatedTrips = state.trips.filter((t) => t._id !== tripId);
+      return {
+        trips: updatedTrips,
+        activeTrip: state.activeTrip?._id === tripId ? (updatedTrips[0] || null) : state.activeTrip,
+      };
+    });
   },
 }));

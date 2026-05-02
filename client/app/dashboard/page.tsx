@@ -18,16 +18,19 @@ export default function DashboardPage() {
     fetchTrips();
   }, [user]);
 
-  const upcomingTrips = trips.filter((t: any) => t.status !== 'completed');
+  const upcomingTrips = trips.filter((t: any) => t.status !== 'completed' && t.status !== 'confirmed');
+  const confirmedTrips = trips.filter((t: any) => t.status === 'confirmed');
   const completedTrips = trips.filter((t: any) => t.status === 'completed');
 
   const formatDate = (d: string) => new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
   const stats = [
     { icon: 'luggage', label: 'Total Trips', value: trips.length },
-    { icon: 'location_on', label: 'Places Saved', value: trips.reduce((a: number, t: any) => a + (t.places?.length || 0), 0) },
+    { icon: 'verified', label: 'Confirmed', value: confirmedTrips.length },
     { icon: 'check_circle', label: 'Completed', value: completedTrips.length },
-    { icon: 'schedule', label: 'Upcoming', value: upcomingTrips.length },
+    { icon: 'location_on', label: 'Places Saved', value: trips.reduce((a: number, t: any) => a + (t.places?.length || 0), 0) },
+    
+    
   ];
 
   return (

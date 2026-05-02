@@ -1,102 +1,502 @@
 [
   {
-    "name": "Marriott Mena House", "city": "Giza",
+    "name": "Marriott Mena House",
+    "city": "Giza",
     "description": "A historic, luxury hotel offering unparalleled, up-close views of the magnificent Great Pyramids right from your balcony or the lush gardens.",
-    "imageKey": "marriott-mena-house-giza", "images": ["https://placehold.co/600x400/e0c090/FFF?text=Mena+House"], "location": { "lat": 29.9840, "lng": 31.1320 }, "rating": 4.8, "pricePerNight": 350, "amenities": ["Pyramid views", "Swimming pool", "Spa", "Free WiFi", "Golf course"], "stars": 5, "nearbyPlaces": []
+    "imageKey": "marriott-mena-house-giza",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736578/egypt-travel/hotels/marriott-mena-house-giza-1.jpg",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736579/egypt-travel/hotels/marriott-mena-house-giza-2.jpg"
+    ],
+    "location": {
+      "lat": 29.984,
+      "lng": 31.132
+    },
+    "rating": 4.8,
+    "pricePerNight": 350,
+    "amenities": [
+      "Pyramid views",
+      "Swimming pool",
+      "Spa",
+      "Free WiFi",
+      "Golf course"
+    ],
+    "stars": 5,
+    "nearbyPlaces": []
   },
   {
-    "name": "Steigenberger Pyramids", "city": "Giza",
+    "name": "Steigenberger Pyramids",
+    "city": "Giza",
     "description": "An elegant, modern resort situated right next to the new Grand Egyptian Museum, offering comfortable rooms and excellent dining options.",
-    "imageKey": "steigenberger-pyramids-giza", "images": ["https://placehold.co/600x400/d0b090/FFF?text=Steigenberger+Giza"], "location": { "lat": 29.9880, "lng": 31.1200 }, "rating": 4.5, "pricePerNight": 180, "amenities": ["Swimming pool", "Restaurant", "Gym", "Free WiFi", "Bar"], "stars": 4, "nearbyPlaces": []
+    "imageKey": "steigenberger-pyramids-giza",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736594/egypt-travel/hotels/steigenberger-pyramids-giza-1.webp",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736595/egypt-travel/hotels/steigenberger-pyramids-giza-2.webp"
+    ],
+    "location": {
+      "lat": 29.988,
+      "lng": 31.12
+    },
+    "rating": 4.5,
+    "pricePerNight": 180,
+    "amenities": [
+      "Swimming pool",
+      "Restaurant",
+      "Gym",
+      "Free WiFi",
+      "Bar"
+    ],
+    "stars": 4,
+    "nearbyPlaces": []
   },
   {
-    "name": "The Nile Ritz-Carlton", "city": "Cairo",
+    "name": "The Nile Ritz-Carlton",
+    "city": "Cairo",
     "description": "An iconic luxury hotel located in the heart of downtown Cairo, situated beautifully between the Nile River and vibrant Tahrir Square.",
-    "imageKey": "the-nile-ritz-carlton-cairo", "images": ["https://placehold.co/600x400/a0c0e0/FFF?text=Nile+Ritz-Carlton"], "location": { "lat": 30.0444, "lng": 31.2330 }, "rating": 4.9, "pricePerNight": 400, "amenities": ["Nile view", "Spa", "Fine dining", "Casino", "Pool"], "stars": 5, "nearbyPlaces": []
+    "imageKey": "the-nile-ritz-carlton-cairo",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736598/egypt-travel/hotels/the-nile-ritz-carlton-cairo-1.jpg",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736599/egypt-travel/hotels/the-nile-ritz-carlton-cairo-2.webp"
+    ],
+    "location": {
+      "lat": 30.0444,
+      "lng": 31.233
+    },
+    "rating": 4.9,
+    "pricePerNight": 400,
+    "amenities": [
+      "Nile view",
+      "Spa",
+      "Fine dining",
+      "Casino",
+      "Pool"
+    ],
+    "stars": 5,
+    "nearbyPlaces": []
   },
   {
-    "name": "Fairmont Nile City", "city": "Cairo",
+    "name": "Fairmont Nile City",
+    "city": "Cairo",
     "description": "Boasting sweeping panoramas of the River Nile and the distant Pyramids, this hotel offers art-deco elegance and premium rooftop pools.",
-    "imageKey": "fairmont-nile-city-cairo", "images": ["https://placehold.co/600x400/c0d0e0/FFF?text=Fairmont+Nile+City"], "location": { "lat": 30.0722, "lng": 31.2267 }, "rating": 4.6, "pricePerNight": 250, "amenities": ["Rooftop pool", "Nile view", "Spa", "Free WiFi", "Gym"], "stars": 5, "nearbyPlaces": []
+    "imageKey": "fairmont-nile-city-cairo",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736568/egypt-travel/hotels/fairmont-nile-city-cairo-1.avif",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736569/egypt-travel/hotels/fairmont-nile-city-cairo-2.jpg"
+    ],
+    "location": {
+      "lat": 30.0722,
+      "lng": 31.2267
+    },
+    "rating": 4.6,
+    "pricePerNight": 250,
+    "amenities": [
+      "Rooftop pool",
+      "Nile view",
+      "Spa",
+      "Free WiFi",
+      "Gym"
+    ],
+    "stars": 5,
+    "nearbyPlaces": []
   },
   {
-    "name": "Kempinski Nile Hotel", "city": "Cairo",
+    "name": "Kempinski Nile Hotel",
+    "city": "Cairo",
     "description": "A boutique luxury hotel situated in the upscale Garden City district, offering personalized butler service and excellent culinary experiences.",
-    "imageKey": "kempinski-nile-hotel-cairo", "images": ["https://placehold.co/600x400/d0c0b0/FFF?text=Kempinski+Nile"], "location": { "lat": 30.0381, "lng": 31.2319 }, "rating": 4.7, "pricePerNight": 280, "amenities": ["Butler service", "Rooftop pool", "Nile view", "Spa", "Restaurant"], "stars": 5, "nearbyPlaces": []
+    "imageKey": "kempinski-nile-hotel-cairo",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736576/egypt-travel/hotels/kempinski-nile-hotel-cairo-1.jpg",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736577/egypt-travel/hotels/kempinski-nile-hotel-cairo-2.jpg"
+    ],
+    "location": {
+      "lat": 30.0381,
+      "lng": 31.2319
+    },
+    "rating": 4.7,
+    "pricePerNight": 280,
+    "amenities": [
+      "Butler service",
+      "Rooftop pool",
+      "Nile view",
+      "Spa",
+      "Restaurant"
+    ],
+    "stars": 5,
+    "nearbyPlaces": []
   },
   {
-    "name": "Sofitel Cairo Nile El Gezirah", "city": "Cairo",
+    "name": "Sofitel Cairo Nile El Gezirah",
+    "city": "Cairo",
     "description": "Located on an island in the middle of the Nile, this French-inspired hotel offers waterfront promenades and uninterrupted river views.",
-    "imageKey": "sofitel-nile-el-gezirah-cairo", "images": ["https://placehold.co/600x400/e0d0c0/FFF?text=Sofitel+Gezirah"], "location": { "lat": 30.0350, "lng": 31.2244 }, "rating": 4.6, "pricePerNight": 220, "amenities": ["Infinity pool", "Casino", "Spa", "Nile view", "Bar"], "stars": 5, "nearbyPlaces": []
+    "imageKey": "sofitel-nile-el-gezirah-cairo",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736585/egypt-travel/hotels/sofitel-nile-el-gezirah-cairo-1.jpg",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736586/egypt-travel/hotels/sofitel-nile-el-gezirah-cairo-2.jpg"
+    ],
+    "location": {
+      "lat": 30.035,
+      "lng": 31.2244
+    },
+    "rating": 4.6,
+    "pricePerNight": 220,
+    "amenities": [
+      "Infinity pool",
+      "Casino",
+      "Spa",
+      "Nile view",
+      "Bar"
+    ],
+    "stars": 5,
+    "nearbyPlaces": []
   },
   {
-    "name": "Sofitel Winter Palace", "city": "Luxor",
+    "name": "Sofitel Winter Palace",
+    "city": "Luxor",
     "description": "A historic, grand hotel on the banks of the Nile built in 1886. Agatha Christie famously wrote 'Death on the Nile' in this very hotel.",
-    "imageKey": "sofitel-winter-luxor", "images": ["https://placehold.co/600x400/f0e0d0/FFF?text=Winter+Palace"], "location": { "lat": 25.6980, "lng": 32.6390 }, "rating": 4.8, "pricePerNight": 260, "amenities": ["Historic charm", "Lush gardens", "Nile view", "Pool", "Fine dining"], "stars": 5, "nearbyPlaces": []
+    "imageKey": "sofitel-winter-luxor",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736587/egypt-travel/hotels/sofitel-winter-luxor-1.jpg",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736588/egypt-travel/hotels/sofitel-winter-luxor-2.jpg"
+    ],
+    "location": {
+      "lat": 25.698,
+      "lng": 32.639
+    },
+    "rating": 4.8,
+    "pricePerNight": 260,
+    "amenities": [
+      "Historic charm",
+      "Lush gardens",
+      "Nile view",
+      "Pool",
+      "Fine dining"
+    ],
+    "stars": 5,
+    "nearbyPlaces": []
   },
   {
-    "name": "Hilton Luxor Resort", "city": "Luxor",
+    "name": "Hilton Luxor Resort",
+    "city": "Luxor",
     "description": "A tranquil, modern resort located on the east bank of the Nile, known for its award-winning spa, infinity pools, and serene atmosphere.",
-    "imageKey": "hilton-resort-luxor", "images": ["https://placehold.co/600x400/c0e0f0/FFF?text=Hilton+Luxor"], "location": { "lat": 25.7190, "lng": 32.6560 }, "rating": 4.7, "pricePerNight": 190, "amenities": ["Infinity pool", "Award-winning spa", "Nile view", "Free WiFi", "Gym"], "stars": 5, "nearbyPlaces": []
+    "imageKey": "hilton-resort-luxor",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736574/egypt-travel/hotels/hilton-resort-luxor-1.jpg",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736575/egypt-travel/hotels/hilton-resort-luxor-2.webp"
+    ],
+    "location": {
+      "lat": 25.719,
+      "lng": 32.656
+    },
+    "rating": 4.7,
+    "pricePerNight": 190,
+    "amenities": [
+      "Infinity pool",
+      "Award-winning spa",
+      "Nile view",
+      "Free WiFi",
+      "Gym"
+    ],
+    "stars": 5,
+    "nearbyPlaces": []
   },
   {
-    "name": "Steigenberger Nile Palace", "city": "Luxor",
+    "name": "Steigenberger Nile Palace",
+    "city": "Luxor",
     "description": "Offering beautiful architecture and excellent river views, this hotel provides a relaxing courtyard setting in the heart of Luxor.",
-    "imageKey": "steigenberger-nile-luxor", "images": ["https://placehold.co/600x400/e0d0c0/FFF?text=Steigenberger+Luxor"], "location": { "lat": 25.6880, "lng": 32.6350 }, "rating": 4.5, "pricePerNight": 120, "amenities": ["Courtyard pool", "Nile view", "Spa", "Restaurant", "Gym"], "stars": 4, "nearbyPlaces": []
+    "imageKey": "steigenberger-nile-luxor",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736593/egypt-travel/hotels/steigenberger-nile-luxor-1.jpg",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736594/egypt-travel/hotels/steigenberger-nile-luxor-2.webp"
+    ],
+    "location": {
+      "lat": 25.688,
+      "lng": 32.635
+    },
+    "rating": 4.5,
+    "pricePerNight": 120,
+    "amenities": [
+      "Courtyard pool",
+      "Nile view",
+      "Spa",
+      "Restaurant",
+      "Gym"
+    ],
+    "stars": 4,
+    "nearbyPlaces": []
   },
   {
-    "name": "Sofitel Legend Old Cataract", "city": "Aswan",
+    "name": "Sofitel Legend Old Cataract",
+    "city": "Aswan",
     "description": "An iconic 19th-century Victorian palace rising from the pink granite desert, offering the most majestic sunset views over the Nile in all of Egypt.",
-    "imageKey": "sofitel-legend-old-cataract-aswan", "images": ["https://placehold.co/600x400/f0d0b0/FFF?text=Old+Cataract"], "location": { "lat": 24.0810, "lng": 32.8870 }, "rating": 4.9, "pricePerNight": 380, "amenities": ["Historic luxury", "Indoor & outdoor pools", "Spa", "Nile view", "Fine dining"], "stars": 5, "nearbyPlaces": []
+    "imageKey": "sofitel-legend-old-cataract-aswan",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736583/egypt-travel/hotels/sofitel-legend-old-cataract-aswan-1.jpg",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736584/egypt-travel/hotels/sofitel-legend-old-cataract-aswan-2.jpg"
+    ],
+    "location": {
+      "lat": 24.081,
+      "lng": 32.887
+    },
+    "rating": 4.9,
+    "pricePerNight": 380,
+    "amenities": [
+      "Historic luxury",
+      "Indoor & outdoor pools",
+      "Spa",
+      "Nile view",
+      "Fine dining"
+    ],
+    "stars": 5,
+    "nearbyPlaces": []
   },
   {
-    "name": "Movenpick Resort Aswan", "city": "Aswan",
+    "name": "Movenpick Resort Aswan",
+    "city": "Aswan",
     "description": "Set entirely on Elephantine Island in the middle of the Nile, offering panoramic river views, beautiful gardens, and complete tranquility.",
-    "imageKey": "movenpick-resort-aswan", "images": ["https://placehold.co/600x400/d0e0c0/FFF?text=Movenpick+Aswan"], "location": { "lat": 24.0890, "lng": 32.8870 }, "rating": 4.6, "pricePerNight": 160, "amenities": ["Island location", "Pool", "Nile view", "Free WiFi", "Restaurant"], "stars": 5, "nearbyPlaces": []
+    "imageKey": "movenpick-resort-aswan",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736579/egypt-travel/hotels/movenpick-resort-aswan-1.jpg",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736580/egypt-travel/hotels/movenpick-resort-aswan-2.jpg"
+    ],
+    "location": {
+      "lat": 24.089,
+      "lng": 32.887
+    },
+    "rating": 4.6,
+    "pricePerNight": 160,
+    "amenities": [
+      "Island location",
+      "Pool",
+      "Nile view",
+      "Free WiFi",
+      "Restaurant"
+    ],
+    "stars": 5,
+    "nearbyPlaces": []
   },
   {
-    "name": "Four Seasons Hotel Alexandria", "city": "Alexandria",
+    "name": "Four Seasons Hotel Alexandria",
+    "city": "Alexandria",
     "description": "An ultra-luxurious, Mediterranean-style resort set within the prestigious San Stefano complex, offering a private sandy beach and classic elegance.",
-    "imageKey": "four-seasons-alexandria", "images": ["https://placehold.co/600x400/a0c0e0/FFF?text=Four+Seasons+Alexandria"], "location": { "lat": 31.2440, "lng": 29.9620 }, "rating": 4.8, "pricePerNight": 320, "amenities": ["Private beach", "Sea view", "Spa", "Infinity pool", "Fine dining"], "stars": 5, "nearbyPlaces": []
+    "imageKey": "four-seasons-alexandria",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736570/egypt-travel/hotels/four-seasons-alexandria-1.jpg",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736571/egypt-travel/hotels/four-seasons-alexandria-2.jpg"
+    ],
+    "location": {
+      "lat": 31.244,
+      "lng": 29.962
+    },
+    "rating": 4.8,
+    "pricePerNight": 320,
+    "amenities": [
+      "Private beach",
+      "Sea view",
+      "Spa",
+      "Infinity pool",
+      "Fine dining"
+    ],
+    "stars": 5,
+    "nearbyPlaces": []
   },
   {
-    "name": "Steigenberger Cecil Hotel", "city": "Alexandria",
+    "name": "Steigenberger Cecil Hotel",
+    "city": "Alexandria",
     "description": "A historic 1920s hotel steeped in literature and espionage history, perfectly located directly on the sweeping Alexandria Corniche.",
-    "imageKey": "steigenberger-cecil-alexandria", "images": ["https://placehold.co/600x400/d0c0b0/FFF?text=Cecil+Hotel"], "location": { "lat": 31.2000, "lng": 29.8990 }, "rating": 4.4, "pricePerNight": 140, "amenities": ["Sea view", "Historic charm", "Free WiFi", "Restaurant", "Bar"], "stars": 4, "nearbyPlaces": []
+    "imageKey": "steigenberger-cecil-alexandria",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736591/egypt-travel/hotels/steigenberger-cecil-alexandria-1.webp",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736592/egypt-travel/hotels/steigenberger-cecil-alexandria-2.avif"
+    ],
+    "location": {
+      "lat": 31.2,
+      "lng": 29.899
+    },
+    "rating": 4.4,
+    "pricePerNight": 140,
+    "amenities": [
+      "Sea view",
+      "Historic charm",
+      "Free WiFi",
+      "Restaurant",
+      "Bar"
+    ],
+    "stars": 4,
+    "nearbyPlaces": []
   },
   {
-    "name": "Steigenberger ALDAU Beach", "city": "Hurghada",
+    "name": "Steigenberger ALDAU Beach",
+    "city": "Hurghada",
     "description": "A spectacular beach resort offering expansive pools, a private golf course, and exclusive access to the pristine waters of the Red Sea.",
-    "imageKey": "steigenberger-aldau-beach-hurghada", "images": ["https://placehold.co/600x400/80c0e0/FFF?text=ALDAU+Beach"], "location": { "lat": 27.1650, "lng": 33.8210 }, "rating": 4.8, "pricePerNight": 210, "amenities": ["Private beach", "Huge pool complex", "Golf course", "Spa", "Diving center"], "stars": 5, "nearbyPlaces": []
+    "imageKey": "steigenberger-aldau-beach-hurghada",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736589/egypt-travel/hotels/steigenberger-aldau-beach-hurghada-1.jpg",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736590/egypt-travel/hotels/steigenberger-aldau-beach-hurghada-2.avif"
+    ],
+    "location": {
+      "lat": 27.165,
+      "lng": 33.821
+    },
+    "rating": 4.8,
+    "pricePerNight": 210,
+    "amenities": [
+      "Private beach",
+      "Huge pool complex",
+      "Golf course",
+      "Spa",
+      "Diving center"
+    ],
+    "stars": 5,
+    "nearbyPlaces": []
   },
   {
-    "name": "Sunrise Crystal Bay", "city": "Hurghada",
+    "name": "Sunrise Crystal Bay",
+    "city": "Hurghada",
     "description": "An elegant, adults-only resort featuring a tranquil private lagoon, modern suites, and highly-rated international dining options.",
-    "imageKey": "sunrise-crystal-bay-hurghada", "images": ["https://placehold.co/600x400/a0d0e0/FFF?text=Crystal+Bay"], "location": { "lat": 27.1350, "lng": 33.8220 }, "rating": 4.7, "pricePerNight": 190, "amenities": ["Private lagoon", "Adults only", "Spa", "Gym", "All-inclusive option"], "stars": 5, "nearbyPlaces": []
+    "imageKey": "sunrise-crystal-bay-hurghada",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736596/egypt-travel/hotels/sunrise-crystal-bay-hurghada-1.webp",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736597/egypt-travel/hotels/sunrise-crystal-bay-hurghada-2.webp"
+    ],
+    "location": {
+      "lat": 27.135,
+      "lng": 33.822
+    },
+    "rating": 4.7,
+    "pricePerNight": 190,
+    "amenities": [
+      "Private lagoon",
+      "Adults only",
+      "Spa",
+      "Gym",
+      "All-inclusive option"
+    ],
+    "stars": 5,
+    "nearbyPlaces": []
   },
   {
-    "name": "Four Seasons Resort Sharm El Sheikh", "city": "Sharm El Sheikh",
+    "name": "Four Seasons Resort Sharm El Sheikh",
+    "city": "Sharm El Sheikh",
     "description": "A stunning, village-style luxury resort offering world-class diving, spectacular Red Sea views, and exceptional, personalized service.",
-    "imageKey": "four-seasons-resort-sharm-el-sheikh", "images": ["https://placehold.co/600x400/b0d0e0/FFF?text=Four+Seasons+Sharm"], "location": { "lat": 27.9400, "lng": 34.3850 }, "rating": 4.9, "pricePerNight": 390, "amenities": ["House reef", "Multiple pools", "Sea view", "Spa", "Tennis courts"], "stars": 5, "nearbyPlaces": []
+    "imageKey": "four-seasons-resort-sharm-el-sheikh",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736572/egypt-travel/hotels/four-seasons-resort-sharm-el-sheikh-1.jpg",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736573/egypt-travel/hotels/four-seasons-resort-sharm-el-sheikh-2.jpg"
+    ],
+    "location": {
+      "lat": 27.94,
+      "lng": 34.385
+    },
+    "rating": 4.9,
+    "pricePerNight": 390,
+    "amenities": [
+      "House reef",
+      "Multiple pools",
+      "Sea view",
+      "Spa",
+      "Tennis courts"
+    ],
+    "stars": 5,
+    "nearbyPlaces": []
   },
   {
-    "name": "Rixos Premium Seagate", "city": "Sharm El Sheikh",
+    "name": "Rixos Premium Seagate",
+    "city": "Sharm El Sheikh",
     "description": "A massive, ultra-all-inclusive premium resort featuring an extensive aqua park, luxury cabanas, and highly energetic daily entertainment.",
-    "imageKey": "rixos-premium-seagate-sharm-el-sheikh", "images": ["https://placehold.co/600x400/c0e0f0/FFF?text=Rixos+Seagate"], "location": { "lat": 28.0200, "lng": 34.4300 }, "rating": 4.8, "pricePerNight": 350, "amenities": ["Ultra all-inclusive", "Aqua park", "Private beach", "Spa", "Kids club"], "stars": 5, "nearbyPlaces": []
+    "imageKey": "rixos-premium-seagate-sharm-el-sheikh",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736581/egypt-travel/hotels/rixos-premium-seagate-sharm-el-sheikh-1.jpg",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736583/egypt-travel/hotels/rixos-premium-seagate-sharm-el-sheikh-2.jpg"
+    ],
+    "location": {
+      "lat": 28.02,
+      "lng": 34.43
+    },
+    "rating": 4.8,
+    "pricePerNight": 350,
+    "amenities": [
+      "Ultra all-inclusive",
+      "Aqua park",
+      "Private beach",
+      "Spa",
+      "Kids club"
+    ],
+    "stars": 5,
+    "nearbyPlaces": []
   },
   {
-    "name": "Badawiya Hotel Farafra", "city": "Farafra",
+    "name": "Badawiya Hotel Farafra",
+    "city": "Farafra",
     "description": "An authentic, eco-friendly mud-brick lodge providing comfortable basecamps for those preparing to explore the incredible White Desert.",
-    "imageKey": "badawiya-hotel-farafra", "images": ["https://placehold.co/600x400/d0b080/FFF?text=Badawiya+Hotel"], "location": { "lat": 27.0580, "lng": 27.9700 }, "rating": 4.1, "pricePerNight": 60, "amenities": ["Eco-friendly", "Desert tours", "Local cuisine", "Pool", "Free WiFi"], "stars": 3, "nearbyPlaces": []
+    "imageKey": "badawiya-hotel-farafra",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736566/egypt-travel/hotels/badawiya-hotel-farafra-1.jpg",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736567/egypt-travel/hotels/badawiya-hotel-farafra-2.jpg"
+    ],
+    "location": {
+      "lat": 27.058,
+      "lng": 27.97
+    },
+    "rating": 4.1,
+    "pricePerNight": 60,
+    "amenities": [
+      "Eco-friendly",
+      "Desert tours",
+      "Local cuisine",
+      "Pool",
+      "Free WiFi"
+    ],
+    "stars": 3,
+    "nearbyPlaces": []
   },
   {
-    "name": "Adrere Amellal", "city": "Siwa",
+    "name": "Adrere Amellal",
+    "city": "Siwa",
     "description": "A world-famous, completely electricity-free eco-lodge built into a mountain. Illuminated entirely by beeswax candles, it offers absolute luxury and peace.",
-    "imageKey": "adrere-amellal-siwa", "images": ["https://placehold.co/600x400/c0a080/FFF?text=Adrere+Amellal"], "location": { "lat": 29.2100, "lng": 25.4300 }, "rating": 4.9, "pricePerNight": 400, "amenities": ["No electricity", "Spring-fed pool", "Organic farm dining", "Desert views", "Eco-luxury"], "stars": 5, "nearbyPlaces": []
+    "imageKey": "adrere-amellal-siwa",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736564/egypt-travel/hotels/adrere-amellal-siwa-1.jpg",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736565/egypt-travel/hotels/adrere-amellal-siwa-2.jpg"
+    ],
+    "location": {
+      "lat": 29.21,
+      "lng": 25.43
+    },
+    "rating": 4.9,
+    "pricePerNight": 400,
+    "amenities": [
+      "No electricity",
+      "Spring-fed pool",
+      "Organic farm dining",
+      "Desert views",
+      "Eco-luxury"
+    ],
+    "stars": 5,
+    "nearbyPlaces": []
   },
   {
-    "name": "Swiss Inn Resort Dahab", "city": "Dahab",
+    "name": "Swiss Inn Resort Dahab",
+    "city": "Dahab",
     "description": "A relaxed, family-friendly beachfront resort set directly on the golden sands of the Red Sea, famous for windsurfing and easy diving access.",
-    "imageKey": "swiss-inn-resort-dahab", "images": ["https://placehold.co/600x400/e0d080/FFF?text=Swiss+Inn+Dahab"], "location": { "lat": 28.4830, "lng": 34.5000 }, "rating": 4.5, "pricePerNight": 110, "amenities": ["Private beach", "Windsurfing center", "Pool", "Spa", "Free WiFi"], "stars": 4, "nearbyPlaces": []
+    "imageKey": "swiss-inn-resort-dahab",
+    "images": [
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736600/egypt-travel/hotels/wiss-inn-resort-dahab-1.webp",
+      "https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777736601/egypt-travel/hotels/wiss-inn-resort-dahab-2.avif"
+    ],
+    "location": {
+      "lat": 28.483,
+      "lng": 34.5
+    },
+    "rating": 4.5,
+    "pricePerNight": 110,
+    "amenities": [
+      "Private beach",
+      "Windsurfing center",
+      "Pool",
+      "Spa",
+      "Free WiFi"
+    ],
+    "stars": 4,
+    "nearbyPlaces": []
   }
 ]

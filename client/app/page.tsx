@@ -1,15 +1,21 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import { placesAPI, packagesAPI } from '@/lib/api';
 
 const destinations = [
-  { name: 'Cairo', subtitle: 'The Mother of the World', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBLxW4QH9Kgv7RUUGFqOXH_yGfULmupukrpUM-1MtujoWBoEtGX_yGLHOR-6VyI7XDZut2DuJUElwpNbgkQoxTIpjzGMd8vlT5xSz1LB8u7oKUF79lmjKsLK1xECjWDYAg_wN7kX_q9N_xyBZFFMSWysSOkQvamIoc_lftv16Ar9-sT5HdqiO6fcCo08EN0GS6nTPNUErJBwJ5Ep_hjNDgy_0Em7EiqbJH2NoYWdutET4_RcfN4uWD_4Y8hUmRPSNGLBuB-YuMEf4U' },
-  { name: 'Luxor', subtitle: "The World's Largest Open Air Museum", image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDC2ItatpzjOuC810H4DiK-UF2bfVg9KdfJwymrjAQK-TZM2iqKOhLyjbVcyEPJi6k7eeJdug0CLNRjBblOCYobWw5PIVqatW3EmQULE2T-1fGoOP7godsTFB5NDUbqUXO0yvujp0c2qSeE8Vkx8qFYTMFmNqiLNE-9PbBNSPbE66cFXYiYZLApbmXjFwj1UCv2QXldFwiMvxWiONcIEuU0smkzPBz_nyZMhSlcRri7ZSQfFUdFigxyGepyWR4gJWJdIGPBRGGpGu0' },
-  { name: 'Alexandria', subtitle: 'The Pearl of the Mediterranean', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCDjIBCV2bAh1l-XuXxg7DdFN61K2tMkl1D-knXeJ-LufLEMdyUqZwOah-I4jW6bQ_ntiV7RZlEI8iSErVUdPoZN7YtRUmhfq7hCirVVpNBGACJIHJ9FbW6Hy5F1WdKKEyT6S6Hfkp1DImsPDgIOvh1HwJyXZTcSiTi7LcjfXlRGxxk-S7nIKO6OSksO94SAEkgz7-wcSdMynTdDUiVFZ_Avd3zjNTAsXhf7RT2ayNtq5s-l12XxIUdz57OMNomOir8OxjhsHFI7Bk' },
-  { name: 'Aswan', subtitle: 'Gateway to Nubia', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBt5Q5FqayxlccoJHk41GOWTmmgK7SKNESrs-PFLHEcznJLv9R78qQq5alxzJdBhitjlwxhbGVa83mHJKsu4MQY1F4WUF9KRP_V3OTJyYWbQTmFvNbF-MyiOjuj5uVCAntJ0SZI31qfYJGa8s7yPBAC87LlUPu8GQz9JE6GHsk4z3Ie8E_VwVVoxPwTP7wMfJBvASH2mEqepFVOl5tpuG3kyPI5IlL6SbbauawJMO7XHAkBOIcu9sYKsnVJj1AP4JKDQ4flcXsMuWs' },
+  { name: 'Cairo', subtitle: 'The Mother of the World', image: 'https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777755983/Cairo_dvivf7.jpg' },
+  { name: 'Giza', subtitle: 'Home of the Great Pyramids', image: 'https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777755983/giza_wy17tt.jpg' },
+  { name: 'Alexandria', subtitle: 'The Pearl of the Mediterranean', image: 'https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777755982/alexandria_eoh6wq.jpg' },
+  { name: 'Luxor', subtitle: "The World's Largest Open Air Museum", image: 'https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777755983/luxor_n2lgfm.jpg' },
+  { name: 'Aswan', subtitle: 'Gateway to Nubia', image: 'https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777755982/Aswan_f5v2bd.jpg' },
+  { name: 'Hurghada', subtitle: 'Red Sea Paradise', image: 'https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777755983/hurghada_ouqwdi.jpg' },
+  { name: 'Sharm El Sheikh', subtitle: 'Diving Capital of Egypt', image: 'https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777755982/sharm_f2c6qa.jpg' },
+  { name: 'Farafra', subtitle: 'Gateway to the White Desert', image: 'https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777755982/farafra_jg1ipt.jpg' },
+  { name: 'Siwa', subtitle: 'Oasis of the Mountain', image: 'https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777755983/siwa_j7aval.jpg' },
+  { name: 'Dahab', subtitle: 'Bohemian Red Sea Haven', image: 'https://res.cloudinary.com/dvkzvgdj5/image/upload/v1777755983/dahab_dnmepo.jpg' },
 ];
 
 const packages = [
@@ -21,6 +27,7 @@ const packages = [
 export default function HomePage() {
   const [topPlaces, setTopPlaces] = useState<any[]>([]);
   const [homePackages, setHomePackages] = useState<any[]>([]);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     placesAPI.getAll()
@@ -36,6 +43,16 @@ export default function HomePage() {
       .then((res) => setHomePackages(res.data.data.slice(0, 3)))
       .catch(() => setHomePackages([]));
   }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 400;
+      scrollContainerRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <MainLayout showFooter={false}>
@@ -79,15 +96,15 @@ export default function HomePage() {
               <h2 className="font-h2 text-h2 text-on-surface">Popular Destinations</h2>
             </div>
             <div className="flex gap-2">
-              <button className="p-2 border border-outline rounded-full hover:bg-surface-container transition-colors">
+              <button onClick={() => scroll('left')} className="p-2 border border-outline rounded-full hover:bg-surface-container transition-colors">
                 <span className="material-symbols-outlined">chevron_left</span>
               </button>
-              <button className="p-2 border border-outline rounded-full hover:bg-surface-container transition-colors">
+              <button onClick={() => scroll('right')} className="p-2 border border-outline rounded-full hover:bg-surface-container transition-colors">
                 <span className="material-symbols-outlined">chevron_right</span>
               </button>
             </div>
           </div>
-          <div className="flex overflow-x-auto hide-scrollbar gap-gutter pb-8 -mx-8 px-8">
+          <div ref={scrollContainerRef} className="flex overflow-x-auto hide-scrollbar gap-gutter pb-8 -mx-8 px-8">
             {destinations.map((dest) => (
               <Link key={dest.name} href={`/explore?city=${dest.name}`} className="min-w-[320px] md:min-w-[400px] group cursor-pointer">
                 <div className="relative h-[500px] overflow-hidden rounded-xl shadow-sm transition-all group-hover:shadow-xl">

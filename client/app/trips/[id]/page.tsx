@@ -192,27 +192,6 @@ export default function TripDetailPage() {
         {/* ── Right: map + included ── */}
         <div className="w-full lg:flex-[15%] space-y-8 lg:sticky lg:top-40 lg:self-start">
 
-          {/* Route Map */}
-          <div className="bg-surface-container rounded-xl overflow-hidden shadow-sm border border-stone-200 p-2">
-            <div className="relative w-full aspect-square bg-stone-200 rounded-lg overflow-hidden">
-              <img
-                src={pkg.routeMapImage || 'https://placehold.co/400x400?text=Map'}
-                alt="Route Map"
-                className="w-full h-full object-cover opacity-60 mix-blend-multiply"
-              />
-              {/* City labels */}
-              <div className="absolute inset-0 p-6 flex flex-col justify-between pointer-events-none">
-                {pkg.regions?.map((region: string) => (
-                  <div key={region} className="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold shadow-sm self-start uppercase">
-                    {region}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="p-4 text-center">
-              <p className="font-label-caps text-[11px] text-stone-500 uppercase tracking-widest">{pkg.cities}</p>
-            </div>
-          </div>
 
           {/* What's Included */}
           <div className="bg-white rounded-xl shadow-sm border border-stone-100 p-8">
