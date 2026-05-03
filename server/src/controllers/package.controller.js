@@ -41,4 +41,40 @@ const getPackageById = async (req, res) => {
   }
 };
 
-module.exports = { getAllPackages, getPackageById };
+// POST /api/packages (admin only)
+const createPackage = async (req, res) => {
+  try {
+    const pkg = await Package.create(req.body);
+    res.status(201).json({ success: true, data: pkg });
+  } catch (error) {
+    res.status(400).json({ success: false, message: error.message });
+  }
+};
+
+// PUT /api/packages/:id (admin only)
+const updatePackage = async (req, res) => {
+  try {
+    const pkg = await Package.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+    if (!pkg) {
+      return res.status(404).json({ success: false, message: 'Package not found' });
+    }
+    res.json({ success: true, data: pkg });
+  } catch (error) {
+    res.status(400).json({ success: false, message: error.message });
+  }
+};
+
+// DELETE /api/packages/:id (admin only)
+const deletePackage = async (req, res) => {
+  try {
+    const pkg = await Package.findByIdAndDelete(req.params.id);
+    if (!pkg) {
+      return res.status(404).json({ success: false, message: 'Package not found' });
+    }
+    res.json({ success: true, message: 'Package deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+module.exports = { getAllPackages, getPackageById, createPackage, updatePackage, deletePackage };

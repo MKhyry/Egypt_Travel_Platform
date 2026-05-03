@@ -31,4 +31,40 @@ const getPlaceById = async (req, res) => {
   }
 };
 
-module.exports = { getAllPlaces, getPlaceById };
+// POST /api/places (admin only)
+const createPlace = async (req, res) => {
+  try {
+    const place = await Place.create(req.body);
+    res.status(201).json({ success: true, data: place });
+  } catch (error) {
+    res.status(400).json({ success: false, message: error.message });
+  }
+};
+
+// PUT /api/places/:id (admin only)
+const updatePlace = async (req, res) => {
+  try {
+    const place = await Place.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+    if (!place) {
+      return res.status(404).json({ success: false, message: 'Place not found' });
+    }
+    res.json({ success: true, data: place });
+  } catch (error) {
+    res.status(400).json({ success: false, message: error.message });
+  }
+};
+
+// DELETE /api/places/:id (admin only)
+const deletePlace = async (req, res) => {
+  try {
+    const place = await Place.findByIdAndDelete(req.params.id);
+    if (!place) {
+      return res.status(404).json({ success: false, message: 'Place not found' });
+    }
+    res.json({ success: true, message: 'Place deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+module.exports = { getAllPlaces, getPlaceById, createPlace, updatePlace, deletePlace };

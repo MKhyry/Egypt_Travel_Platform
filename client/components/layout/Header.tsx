@@ -9,6 +9,7 @@ const navLinks = [
   { href: '/explore', label: 'Explore' },
   { href: '/my-trip', label: 'My Trip' },
   { href: '/trips', label: 'Trips' },
+  { href: '/admin', label: 'Admin', adminOnly: true },
 ];
 
 export default function Header() {
@@ -24,7 +25,8 @@ export default function Header() {
           Kemet Travel
         </Link>
         <nav className="hidden md:flex items-center space-x-8">
-          {navLinks.map(({ href, label }) => {
+          {navLinks.map(({ href, label, adminOnly }) => {
+            if (adminOnly && user?.role !== 'admin') return null;
             const isActive = pathname.startsWith(href);
             return (
               <Link

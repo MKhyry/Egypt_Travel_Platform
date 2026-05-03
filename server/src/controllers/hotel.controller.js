@@ -60,4 +60,40 @@ const getHotelSuggestions = async (req, res) => {
   }
 };
 
-module.exports = { getAllHotels, getHotelById, getHotelSuggestions };
+// POST /api/hotels (admin only)
+const createHotel = async (req, res) => {
+  try {
+    const hotel = await Hotel.create(req.body);
+    res.status(201).json({ success: true, data: hotel });
+  } catch (error) {
+    res.status(400).json({ success: false, message: error.message });
+  }
+};
+
+// PUT /api/hotels/:id (admin only)
+const updateHotel = async (req, res) => {
+  try {
+    const hotel = await Hotel.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+    if (!hotel) {
+      return res.status(404).json({ success: false, message: 'Hotel not found' });
+    }
+    res.json({ success: true, data: hotel });
+  } catch (error) {
+    res.status(400).json({ success: false, message: error.message });
+  }
+};
+
+// DELETE /api/hotels/:id (admin only)
+const deleteHotel = async (req, res) => {
+  try {
+    const hotel = await Hotel.findByIdAndDelete(req.params.id);
+    if (!hotel) {
+      return res.status(404).json({ success: false, message: 'Hotel not found' });
+    }
+    res.json({ success: true, message: 'Hotel deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+module.exports = { getAllHotels, getHotelById, getHotelSuggestions, createHotel, updateHotel, deleteHotel };

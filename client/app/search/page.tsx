@@ -17,6 +17,7 @@ type ResultItem = {
   rating?: number;
   price?: number;
   pricePerNight?: number;
+  stars?: number;
   duration?: string;
   tier?: string;
   category?: string;

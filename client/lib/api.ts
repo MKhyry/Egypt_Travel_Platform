@@ -20,6 +20,9 @@ export const placesAPI = {
     api.get('/places', { params: filters }),
   getById: (id: string) =>
     api.get(`/places/${id}`),
+  create: (data: any) => api.post('/places', data),
+  update: (id: string, data: any) => api.put(`/places/${id}`, data),
+  delete: (id: string) => api.delete(`/places/${id}`),
 };
 
 // Auth
@@ -58,6 +61,9 @@ export const hotelsAPI = {
     api.get(`/hotels/${id}`),
   getSuggestions: (tripId: string) =>
     api.get(`/hotels/suggestions/${tripId}`),
+  create: (data: any) => api.post('/hotels', data),
+  update: (id: string, data: any) => api.put(`/hotels/${id}`, data),
+  delete: (id: string) => api.delete(`/hotels/${id}`),
 };
 
 // Packages
@@ -66,6 +72,9 @@ export const packagesAPI = {
     api.get('/packages', { params: filters }),
   getById: (id: string) =>
     api.get(`/packages/${id}`),
+  create: (data: any) => api.post('/packages', data),
+  update: (id: string, data: any) => api.put(`/packages/${id}`, data),
+  delete: (id: string) => api.delete(`/packages/${id}`),
 };
 
 // Bookings

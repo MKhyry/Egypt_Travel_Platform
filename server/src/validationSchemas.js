@@ -112,6 +112,108 @@ const getPackageByIdSchema = {
   }),
 };
 
+// Admin Place schemas
+const createPlaceSchema = {
+  body: Joi.object({
+    name: Joi.string().trim().min(2).required(),
+    city: Joi.string().trim().required(),
+    category: Joi.string().trim().required(),
+    description: Joi.string().trim().required(),
+    images: Joi.array().items(Joi.string()).min(1).required(),
+    rating: Joi.number().min(0).max(5),
+    visitDuration: Joi.number().min(1),
+    location: Joi.object({
+      lat: Joi.number().required(),
+      lng: Joi.number().required(),
+    }).optional(),
+    tips: Joi.array().items(Joi.string()).optional(),
+  }),
+};
+
+const updatePlaceSchema = {
+  params: Joi.object({
+    id: objectId.required(),
+  }),
+  body: Joi.object({
+    name: Joi.string().trim().min(2),
+    city: Joi.string().trim(),
+    category: Joi.string().trim(),
+    description: Joi.string().trim(),
+    images: Joi.array().items(Joi.string()),
+    rating: Joi.number().min(0).max(5),
+    visitDuration: Joi.number().min(1),
+    location: Joi.object({
+      lat: Joi.number(),
+      lng: Joi.number(),
+    }).optional(),
+    tips: Joi.array().items(Joi.string()).optional(),
+  }),
+};
+
+// Admin Hotel schemas
+const createHotelSchema = {
+  body: Joi.object({
+    name: Joi.string().trim().min(2).required(),
+    city: Joi.string().trim().required(),
+    stars: Joi.number().integer().min(1).max(5).required(),
+    pricePerNight: Joi.number().min(0).required(),
+    images: Joi.array().items(Joi.string()).min(1).required(),
+    description: Joi.string().trim().allow(''),
+    nearbyPlaces: Joi.array().items(Joi.string()).optional(),
+    amenities: Joi.array().items(Joi.string()).optional(),
+  }),
+};
+
+const updateHotelSchema = {
+  params: Joi.object({
+    id: objectId.required(),
+  }),
+  body: Joi.object({
+    name: Joi.string().trim().min(2),
+    city: Joi.string().trim(),
+    stars: Joi.number().integer().min(1).max(5),
+    pricePerNight: Joi.number().min(0),
+    images: Joi.array().items(Joi.string()),
+    description: Joi.string().trim().allow(''),
+    nearbyPlaces: Joi.array().items(Joi.string()).optional(),
+    amenities: Joi.array().items(Joi.string()).optional(),
+  }),
+};
+
+// Admin Package schemas
+const createPackageSchema = {
+  body: Joi.object({
+    title: Joi.string().trim().min(3).required(),
+    days: Joi.number().integer().min(1).required(),
+    price: Joi.number().min(0).required(),
+    description: Joi.string().trim().required(),
+    image: Joi.string().trim().required(),
+    tier: Joi.string().valid('Luxury', 'Boutique', 'Essential').required(),
+    regions: Joi.array().items(Joi.string()).min(1).required(),
+    itinerary: Joi.array().items(Joi.object()).optional(),
+    hotels: Joi.array().items(Joi.object()).optional(),
+    includes: Joi.array().items(Joi.string()).optional(),
+  }),
+};
+
+const updatePackageSchema = {
+  params: Joi.object({
+    id: objectId.required(),
+  }),
+  body: Joi.object({
+    title: Joi.string().trim().min(3),
+    days: Joi.number().integer().min(1),
+    price: Joi.number().min(0),
+    description: Joi.string().trim(),
+    image: Joi.string().trim(),
+    tier: Joi.string().valid('Luxury', 'Boutique', 'Essential'),
+    regions: Joi.array().items(Joi.string()),
+    itinerary: Joi.array().items(Joi.object()).optional(),
+    hotels: Joi.array().items(Joi.object()).optional(),
+    includes: Joi.array().items(Joi.string()).optional(),
+  }),
+};
+
 // Booking schemas
 const createBookingSchema = {
   body: Joi.object({
@@ -137,6 +239,8 @@ module.exports = {
   loginSchema,
   getPlacesSchema,
   getPlaceByIdSchema,
+  createPlaceSchema,
+  updatePlaceSchema,
   createTripSchema,
   tripIdSchema,
   addPlaceToTripSchema,
@@ -145,8 +249,12 @@ module.exports = {
   getHotelsSchema,
   getHotelByIdSchema,
   getHotelSuggestionsSchema,
+  createHotelSchema,
+  updateHotelSchema,
   getPackagesSchema,
   getPackageByIdSchema,
+  createPackageSchema,
+  updatePackageSchema,
   createBookingSchema,
   bookingIdSchema,
 };
