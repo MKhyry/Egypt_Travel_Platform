@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import MainLayout from '@/components/layout/MainLayout';
 import { placesAPI, packagesAPI } from '@/lib/api';
 
@@ -25,9 +26,19 @@ const packages = [
 ];
 
 export default function HomePage() {
+  const router = useRouter();
   const [topPlaces, setTopPlaces] = useState<any[]>([]);
   const [homePackages, setHomePackages] = useState<any[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    } else {
+      router.push('/explore');
+    }
+  };
 
   useEffect(() => {
     placesAPI.getAll()
@@ -71,11 +82,21 @@ export default function HomePage() {
           <div className="bg-white/95 backdrop-blur-md p-2 rounded-xl shadow-2xl flex flex-col md:flex-row gap-2 max-w-3xl mx-auto mb-8">
             <div className="flex-1 flex items-center px-4 py-3 border-b md:border-b-0 md:border-r border-stone-200">
               <span className="material-symbols-outlined text-primary mr-3">location_on</span>
-              <input className="w-full bg-transparent border-none focus:ring-0 text-stone-800 font-body-md placeholder:text-stone-400 focus:outline-none" placeholder="Where to, explorer?" type="text" />
+              <input
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+                className="w-full bg-transparent border-none focus:ring-0 text-stone-800 font-body-md placeholder:text-stone-400 focus:outline-none"
+                placeholder="Where to, explorer?"
+                type="text"
+              />
             </div>
-            <Link href="/explore" className="bg-[#C5A059] text-white px-10 py-3 rounded-lg font-bold font-label-caps hover:bg-primary transition-all active:scale-95 flex items-center justify-center">
+            <button
+              onClick={handleSearch}
+              className="bg-[#C5A059] text-white px-10 py-3 rounded-lg font-bold font-label-caps hover:bg-primary transition-all active:scale-95 flex items-center justify-center"
+            >
               START PLANNING
-            </Link>
+            </button>
           </div>
           <div className="flex flex-wrap justify-center gap-3">
             {['Cairo', 'Luxor', 'Aswan', 'Sharm El Sheikh'].map((city) => (

@@ -84,4 +84,9 @@ export const bookingsAPI = {
   getById: (id: string) => api.get(`/bookings/${id}`),
 };
 
+// Search
+export const searchAPI = {
+  search: (query: string) => api.get('/search', { params: { q: query } }),
+};
+
 export default api;

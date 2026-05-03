@@ -9,6 +9,7 @@ const tripRoutes = require('./routes/trip.routes');
 const hotelRoutes = require('./routes/hotel.routes');
 const packageRoutes = require('./routes/package.routes');
 const bookingRoutes = require('./routes/booking.routes');
+const searchRoutes = require('./routes/search.routes');
 
 const app = express();
 
@@ -27,5 +28,6 @@ app.use('/api/trips', tripRoutes);
 app.use('/api/hotels', hotelRoutes);
 app.use('/api/packages', packageRoutes);
 app.use('/api/bookings', bookingRoutes);
+app.use('/api/search', searchRoutes);
 
 module.exports = app;
