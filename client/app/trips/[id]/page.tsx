@@ -60,7 +60,7 @@ export default function TripDetailPage() {
             <span className="text-white/40">•</span>
             <span className="font-label-caps text-label-caps text-white">{pkg.duration.toUpperCase()}</span>
             <span className="text-white/40">•</span>
-            <span className="bg-white/20 backdrop-blur text-white px-3 py-0.5 rounded-full font-label-caps text-[10px] uppercase">{pkg.tier}</span>
+            <span className="bg-white/20 backdrop-blur text-white px-3 py-[2px] rounded-full font-label-caps text-[10px] uppercase">{pkg.tier}</span>
           </div>
           <h1 className="font-h1 text-h1 text-white max-w-3xl mb-6">{pkg.title}</h1>
           <p className="font-body-lg text-body-lg text-stone-200 max-w-2xl">{pkg.heroDescription || pkg.description}</p>

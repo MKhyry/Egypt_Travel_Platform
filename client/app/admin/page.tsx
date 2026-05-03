@@ -10,7 +10,7 @@ type EntityType = 'places' | 'hotels' | 'packages';
 
 export default function AdminPage() {
   const router = useRouter();
-  const { user, isInitialzing } = useAuthStore();
+  const { user, isInitializing } = useAuthStore();
   const [activeTab, setActiveTab] = useState<EntityType>('places');
   const [items, setItems] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -22,11 +22,11 @@ export default function AdminPage() {
   const [errors, setErrors] = useState<string[]>([]);
 
   useEffect(() => {
-    if (isInitialzing) return;
+    if (isInitializing) return;
     if (!user) { router.push('/login'); return; }
     if (user.role !== 'admin') { router.push('/'); return; }
     fetchItems();
-  }, [user, isInitialzing, activeTab]);
+  }, [user, isInitializing, activeTab]);
 
   const fetchItems = async () => {
     setIsLoading(true);

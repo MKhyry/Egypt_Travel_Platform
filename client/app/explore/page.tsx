@@ -169,7 +169,7 @@ function ExploreContent() {
               <div className="flex flex-wrap gap-2">
                 <button
                   onClick={() => setCity('')}
-                  className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${city === '' ? 'bg-primary text-on-primary' : 'bg-surface-container border border-outline-variant text-on-surface-variant hover:bg-surface-container-high'}`}
+                  className={`px-3 py-[6px] rounded-full text-xs font-bold transition-all ${city === '' ? 'bg-primary text-on-primary' : 'bg-surface-container border border-outline-variant text-on-surface-variant hover:bg-surface-container-high'}`}
                 >
                   All
                 </button>
@@ -177,7 +177,7 @@ function ExploreContent() {
                   <button
                     key={c}
                     onClick={() => setCity(c)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${city === c ? 'bg-primary text-on-primary' : 'bg-surface-container border border-outline-variant text-on-surface-variant hover:bg-surface-container-high'}`}
+                    className={`px-3 py-[6px] rounded-full text-xs font-bold transition-all ${city === c ? 'bg-primary text-on-primary' : 'bg-surface-container border border-outline-variant text-on-surface-variant hover:bg-surface-container-high'}`}
                   >
                     {c}
                   </button>
@@ -269,7 +269,7 @@ function ExploreContent() {
                           <p className="text-sm text-on-surface-variant flex items-center gap-1 mt-1">
                             <span className="material-symbols-outlined text-base">location_on</span>
                             {place.city}
-                            <span className="ml-2 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">{place.category}</span>
+                            <span className="ml-2 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-[2px] rounded-full uppercase tracking-widest">{place.category}</span>
                           </p>
                         </div>
                       </div>

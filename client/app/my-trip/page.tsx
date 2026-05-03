@@ -10,7 +10,7 @@ import { tripsAPI, hotelsAPI } from '@/lib/api';
 
 export default function MyTripPage() {
   const router = useRouter();
-  const { user, isInitialzing } = useAuthStore();
+  const { user, isInitializing } = useAuthStore();
   const { trips, activeTrip, fetchTrips, fetchTrip, createTrip, removePlace, deleteTrip } = useTripStore();
 
   const [hotels, setHotels] = useState<any[]>([]);
@@ -25,14 +25,14 @@ export default function MyTripPage() {
   const confirmedTrips = useMemo(() => trips.filter((t: any) => t.status === 'confirmed'), [trips]);
 
   useEffect(() => {
-    if (isInitialzing) return;
+    if (isInitializing) return;
     if (!user) { router.push('/login'); return; }
     fetchTrips();
-  }, [user, isInitialzing]);
+  }, [user, isInitializing]);
 
   // Refresh trip data when navigating to this page (e.g., from booking confirmation)
   useEffect(() => {
-    if (pathname === '/my-trip' && user && !isInitialzing) {
+    if (pathname === '/my-trip' && user && !isInitializing) {
       fetchTrips();
     }
   }, [pathname]);

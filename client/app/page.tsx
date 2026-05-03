@@ -100,7 +100,7 @@ export default function HomePage() {
           </div>
           <div className="flex flex-wrap justify-center gap-3">
             {['Cairo', 'Luxor', 'Aswan', 'Sharm El Sheikh'].map((city) => (
-              <Link key={city} href={`/explore?city=${city}`} className="bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-white/20 transition-all">
+              <Link key={city} href={`/explore?city=${city}`} className="bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-[6px] rounded-full text-sm font-medium hover:bg-white/20 transition-all">
                 {city}
               </Link>
             ))}
@@ -197,7 +197,7 @@ export default function HomePage() {
                         {/* Featured item gets the styled badge and full description */}
                         {isFeatured ? (
                           <>
-                            <span className="bg-[#c19a6b] text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest w-fit mb-4">
+                            <span className="bg-[#c19a6b] text-white text-[10px] font-bold px-3 py-[6px] rounded-full uppercase tracking-widest w-fit mb-4">
                               {place.category}
                             </span>
                             <h3 className="font-serif text-3xl lg:text-4xl text-white font-bold mb-3">
@@ -259,7 +259,7 @@ export default function HomePage() {
                     </div>
                     <div className="p-8">
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">{pkg.tier}</span>
+                        <span className="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-[2px] rounded-full uppercase tracking-widest">{pkg.tier}</span>
                       </div>
                       <h3 className="font-h3 text-h3 mb-4 text-on-surface">{pkg.title}</h3>
                       <p className="text-on-surface-variant mb-6 text-sm font-body-md line-clamp-2">{pkg.description}</p>

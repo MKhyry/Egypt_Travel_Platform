@@ -12,7 +12,7 @@ interface AuthStore {
   user: User | null;
   token: string | null;
   isLoading: boolean;
-  isInitialzing: boolean;
+  isInitializing: boolean;
   login: (email: string, password: string) => Promise<void>;
   register: (name: string, email: string, password: string) => Promise<void>;
   logout: () => void;
@@ -23,7 +23,7 @@ export const useAuthStore = create<AuthStore>((set) => ({
   user: null,
   token: null,
   isLoading: false,
-  isInitialzing: true,
+  isInitializing: true,
 
   login: async (email, password) => {
     set({ isLoading: true });
@@ -57,18 +57,18 @@ export const useAuthStore = create<AuthStore>((set) => ({
   },
 
   loadUser: async () => {
-    set({ isInitialzing: true });
+    set({ isInitializing: true });
     const token = localStorage.getItem('token');
     if (!token) {
-      set({ isInitialzing: false });
+      set({ isInitializing: false });
       return;
     }
     try {
       const res = await authAPI.getMe();
-      set({ user: res.data.data, token, isInitialzing: false });
+      set({ user: res.data.data, token, isInitializing: false });
     } catch (error) {
       localStorage.removeItem('token');
-      set({ isInitialzing: false });
+      set({ isInitializing: false });
     }
   },
 }));

@@ -129,7 +129,7 @@ function SearchContent() {
         <div className="relative h-48 overflow-hidden">
           <img src={item.image || 'https://placehold.co/400x300?text=No+Image'} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           {item.tier && (
-            <div className="absolute top-3 left-3 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">
+            <div className="absolute top-3 left-3 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-[2px] rounded-full uppercase tracking-widest">
               {item.tier}
             </div>
           )}
