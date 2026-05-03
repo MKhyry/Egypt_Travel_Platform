@@ -30,4 +30,8 @@ app.use('/api/packages', packageRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/search', searchRoutes);
 
+// Error handling middleware (must be last)
+const { handleError } = require('./middleware/error.middleware');
+app.use(handleError);
+
 module.exports = app;

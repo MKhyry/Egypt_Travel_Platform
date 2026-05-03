@@ -96,7 +96,7 @@ function BookingContent() {
         if (data?.errors) {
           setValidationErrors(data.errors);
         } else {
-          alert(data?.message || 'Booking failed');
+          setValidationErrors([data?.message || 'Booking failed']);
         }
       } finally {
         setSubmitting(false);

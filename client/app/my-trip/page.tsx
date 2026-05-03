@@ -120,8 +120,8 @@ export default function MyTripPage() {
                       try {
                         await deleteTrip(activeTrip._id);
                       } catch (err) {
-                        alert("Failed to delete trip. Please try again.");
                         console.error("Delete trip error:", err);
+                        // Could add a toast/error state here
                       }
                     }
                   }}
