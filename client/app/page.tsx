@@ -125,7 +125,7 @@ export default function HomePage() {
               </button>
             </div>
           </div>
-          <div ref={scrollContainerRef} className="flex overflow-x-auto hide-scrollbar gap-gutter pb-8 -mx-8 px-8">
+          <div ref={scrollContainerRef} className="flex overflow-x-auto hide-scrollbar gap-gutter pb-8 px-8">
             {destinations.map((dest) => (
               <Link key={dest.name} href={`/explore?city=${dest.name}`} className="min-w-[320px] md:min-w-[400px] group cursor-pointer">
                 <div className="relative h-[500px] overflow-hidden rounded-xl shadow-sm transition-all group-hover:shadow-xl">

@@ -6,6 +6,7 @@ import { useAuthStore } from '@/store/authStore';
 import { useEffect } from 'react';
 
 const navLinks = [
+  { href: '/', label: 'Home' },
   { href: '/explore', label: 'Explore' },
   { href: '/my-trip', label: 'My Trip' },
   { href: '/trips', label: 'Trips' },
@@ -27,7 +28,7 @@ export default function Header() {
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map(({ href, label, adminOnly }) => {
             if (adminOnly && user?.role !== 'admin') return null;
-            const isActive = pathname.startsWith(href);
+            const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href);
             return (
               <Link
                 key={href}

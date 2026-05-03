@@ -66,9 +66,16 @@ export const useAuthStore = create<AuthStore>((set) => ({
     try {
       const res = await authAPI.getMe();
       set({ user: res.data.data, token, isInitializing: false });
-    } catch (error) {
-      localStorage.removeItem('token');
-      set({ isInitializing: false });
+    } catch (error: any) {
+      const status = error?.response?.status;
+      // Only remove token if it's actually invalid (401) or expired (403)
+      if (status === 401 || status === 403) {
+        localStorage.removeItem('token');
+        set({ user: null, token: null, isInitializing: false });
+      } else {
+        // Temporary error (network, server down) — keep token, just finish loading
+        set({ isInitializing: false });
+      }
     }
   },
 }));
