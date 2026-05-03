@@ -21,6 +21,13 @@ const protect = async (req, res, next) => {
     // 4. Attach user to request
     req.user = await User.findById(decoded.id).select('-password');
 
+    if (!req.user) {
+      return res.status(401).json({
+        success: false,
+        message: 'User no longer exists'
+      });
+    }
+
     next();
   } catch (error) {
     res.status(401).json({

@@ -7,6 +7,7 @@ const Trip = require('../models/Trip');
 const createBooking = async (req, res) => {
   try {
     const { tripId, packageId, startDate, guests, contactName, contactEmail, contactPhone, notes } = req.body;
+    let newTripId = null;
 
     let totalPrice = 0;
 
@@ -42,6 +43,21 @@ const createBooking = async (req, res) => {
         return res.status(404).json({ success: false, message: 'Package not found' });
       }
       totalPrice = (pkg.price || 0) * guests;
+
+      // Auto-create a Trip for this package booking
+      const tripStartDate = new Date(startDate);
+      const tripEndDate = new Date(tripStartDate);
+      tripEndDate.setDate(tripEndDate.getDate() + (pkg.days || 7));
+
+      const trip = await Trip.create({
+        user: req.user._id,
+        title: pkg.title,
+        startDate: tripStartDate,
+        endDate: tripEndDate,
+        status: 'confirmed',
+      });
+
+      newTripId = trip._id;
     }
 
     // Ensure totalPrice is a valid number
@@ -59,6 +75,7 @@ const createBooking = async (req, res) => {
     };
     if (tripId) bookingData.trip = tripId;
     if (packageId) bookingData.package = packageId;
+    if (newTripId) bookingData.trip = newTripId;
 
     const booking = await Booking.create(bookingData);
 
