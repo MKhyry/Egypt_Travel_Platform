@@ -14,7 +14,12 @@ const searchRoutes = require('./routes/search.routes');
 const app = express();
 
 app.use(helmet());
-app.use(cors({ origin: 'http://localhost:3000' }));
+// CORS config: use CLIENT_URL env var (comma-separated for multiple URLs) or default to localhost
+const corsOptions = {
+  origin: process.env.CLIENT_URL ? process.env.CLIENT_URL.split(',') : 'http://localhost:3000',
+  credentials: true
+};
+app.use(cors(corsOptions));
 app.use(morgan('dev'));
 app.use(express.json());
 
