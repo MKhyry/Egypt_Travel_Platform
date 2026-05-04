@@ -16,8 +16,19 @@ const app = express();
 app.use(helmet());
 // CORS config: use CLIENT_URL env var (comma-separated for multiple URLs) or default to localhost
 const corsOptions = {
-  origin: process.env.CLIENT_URL ? process.env.CLIENT_URL.split(',') : 'http://localhost:3000',
-  credentials: true
+  origin: function (origin, callback) {
+    const allowed = [
+      'http://localhost:3000',
+      /\.vercel\.app$/,
+    ];
+    if (!origin) return callback(null, true);
+    const isAllowed = allowed.some(o =>
+      typeof o === 'string' ? o === origin : o.test(origin)
+    );
+    if (isAllowed) return callback(null, true);
+    callback(new Error('Not allowed by CORS'));
+  },
+  credentials: true,
 };
 app.use(cors(corsOptions));
 app.use(morgan('dev'));
