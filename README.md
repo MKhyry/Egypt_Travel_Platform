@@ -9,7 +9,7 @@ A full-stack travel booking platform for exploring Egypt's ancient wonders and m
 - Mohamed Khairy Eid Elzeblawy
 - Mohamed Reda Ibrahim Ata
 - Mustafa Mohamed Mohamed Hussein
-- Kirina Anis Samir
+- Kirmina Anis Samir
 - Eman Abd-Elrahman Shoeib
 - Mai Nasr Mohamed
 - Aya Salah Eliwa
